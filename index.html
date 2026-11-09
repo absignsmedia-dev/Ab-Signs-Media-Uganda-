@@ -1,0 +1,1743 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AB SIGNS MEDIA — Print, Stationery & Photography</title>
+  <meta name="description" content="AB SIGNS MEDIA — Design, Printing, Stationery, Photography, Branding. Quality for lifetime memories." />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="AB SIGNS MEDIA — Print, Stationery & Photography" />
+  <meta property="og:description" content="Design, printing, stationery, photography and branding. Bring your idea. We bring it to life." />
+  <link rel="icon" type="image/png" href="logo.png" />
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&family=Roboto:wght@500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <style>
+    :root {
+      --primary: #0b1d3a;
+      --secondary: #eab308;
+      --green: #25D366;
+      --accent: #1e40af;
+      --line: #c5d0de;
+    }
+    html { scroll-behavior: smooth; scroll-padding-top: 8px; }
+    body { font-family: 'Open Sans', system-ui, sans-serif; color: #0f172a; background: #e8eef5; }
+    a { text-decoration: none; }
+    .btn-primary { background: var(--primary); border-color: var(--primary); }
+    .btn-primary:hover { background: var(--accent); border-color: var(--accent); }
+    .btn-secondary { background: var(--secondary); border-color: var(--secondary); color: #0b1d3a; font-weight: 600; }
+    .btn-wa { background: var(--green); color: #fff; border: none; }
+    .btn-wa:hover { background: #1da851; color: #fff; }
+
+    .topbar { background: var(--primary); color: #cbd5e1; font-size: .85rem; padding: 8px 0; }
+    .topbar a { color: #e2e8f0; }
+    .topbar a:hover { color: var(--secondary); }
+
+    .brand-title { font-family: Roboto, sans-serif; font-weight: 700; color: var(--primary); margin: 0; }
+    .brand-title .ab { color: #3b82f6; }
+    .brand-title .media { color: #ef4444; }
+
+    .nav-bar { background: var(--primary); }
+    .nav-bar .nav-link { color: #e2e8f0 !important; font-weight: 500; padding: 12px 14px !important; }
+    .nav-bar .nav-link:hover, .nav-bar .nav-link.active { color: var(--secondary) !important; }
+
+    .hero-banner { position: relative; height: 100vh; height: 100svh; min-height: 480px; background: #0b1d3a; overflow: hidden; color: #fff; }
+    #bannerVideo { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: 0; }
+    .banner-slides { position: absolute; inset: 0; z-index: 0; }
+    .banner-slide { position: absolute; inset: 0; opacity: 0; transition: opacity .7s ease; background: #0b1d3a center/cover no-repeat; }
+    .banner-slide.active { opacity: 1; }
+    .hero-overlay {
+      position: relative; z-index: 2;
+      background: linear-gradient(180deg, rgba(11,29,58,.45), rgba(11,29,58,.88));
+      height: 100%; display: flex; align-items: center; justify-content: center; padding: 2rem 0;
+    }
+    .hero-overlay .tag { color: var(--secondary); font-style: italic; }
+    .banner-arrows {
+      position: absolute; z-index: 3; top: 50%; left: 0; right: 0;
+      display: flex; justify-content: space-between; padding: 0 12px;
+      transform: translateY(-50%); pointer-events: none;
+    }
+    .banner-arrows button {
+      pointer-events: auto; width: 40px; height: 40px; border-radius: 50%;
+      border: none; background: rgba(255,255,255,.25); color: #fff; font-size: 1.1rem; cursor: pointer;
+    }
+
+    .hero-kicker { text-transform: uppercase; font-weight: 700; letter-spacing: 2px; color: #93c5fd; font-size: .85rem; margin-bottom: .5rem; }
+    .hero-name { font-family: Roboto, sans-serif; font-weight: 700; font-size: clamp(2.2rem, 9vw, 5rem); line-height: 1.05; margin-bottom: .5rem; text-shadow: 0 3px 14px rgba(0,0,0,.5); }
+    .hero-title { font-size: clamp(1.05rem, 3.5vw, 1.7rem); margin-bottom: 1.6rem !important; }
+    .scroll-down {
+      position: absolute; left: 50%; bottom: 22px; transform: translateX(-50%);
+      width: 52px; height: 52px; border-radius: 50%; background: rgba(255,255,255,.22);
+      border: 2px solid rgba(255,255,255,.7); color: #fff; font-size: 1.3rem;
+      display: flex; align-items: center; justify-content: center; animation: bounceDown 1.6s infinite;
+    }
+    .scroll-down:hover { background: var(--secondary); color: #0b1d3a; }
+    @keyframes bounceDown { 0%,100% { transform: translate(-50%, 0); } 50% { transform: translate(-50%, 10px); } }
+    .product-card {
+      background: #fff; border: 2px solid var(--line); border-radius: 12px; overflow: hidden;
+      height: 100%; transition: .2s; box-shadow: 0 4px 12px rgba(11,29,58,.08);
+    }
+    .product-card:hover { transform: translateY(-3px); box-shadow: 0 8px 20px rgba(11,29,58,.14); }
+    .product-card.outlined { border: 2.5px solid var(--accent); }
+    .pic-slot {
+      height: 140px; background: #e2e8f0; display: flex; align-items: center; justify-content: center;
+      color: #64748b; font-size: .8rem; text-align: center; padding: 8px; border-bottom: 1px solid #e2e8f0;
+    }
+    .pic-slot img { width: 100%; height: 100%; object-fit: cover; }
+    .web-desc { display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+    .price { color: var(--primary); font-weight: 700; }
+    .subprice { color: #b91c1c; font-size: .8rem; }
+
+    .ads-strip {
+      position: relative; height: 200px; border-radius: 12px; overflow: hidden;
+      border: 2px solid var(--line); box-shadow: 0 4px 12px rgba(11,29,58,.08); background: #0f172a;
+    }
+    .ads-slide { position: absolute; inset: 0; opacity: 0; transition: opacity .6s ease; background: #1e293b center/cover no-repeat; }
+    .ads-slide.active { opacity: 1; }
+    .ads-label {
+      position: absolute; left: 10px; bottom: 10px; z-index: 2;
+      background: rgba(0,0,0,.55); color: #f39494; font-size: .72rem; padding: 4px 10px; border-radius: 999px;
+    }
+
+    .gallery-slot {
+      height: 140px; background: #e2e8f0; border-radius: 10px; overflow: hidden;
+      border: 6px solid var(--line); cursor: pointer; box-shadow: 0 2px 8px rgba(11,29,58,.06);
+      -webkit-tap-highlight-color: transparent;
+    }
+    .gallery-slot:active { opacity: .85; transform: scale(.98); }
+    .gallery-slot img { width: 100%; height: 100%; object-fit: cover; }
+
+    .lightbox {
+      display: none; position: fixed; inset: 0; z-index: 99999; background: rgba(0,0,0,.94);
+      align-items: center; justify-content: center; padding: 12px; touch-action: manipulation;
+    }
+    .lightbox.open { display: flex; }
+    .lightbox img {
+      max-width: 100%; max-height: 88vh; width: auto; height: auto; border-radius: 10px;
+      object-fit: contain; box-shadow: 0 8px 40px rgba(0,0,0,.5);
+    }
+    .lightbox-close, .lightbox-nav {
+      position: fixed; width: 48px; height: 48px; border: none; border-radius: 50%;
+      background: rgba(255,255,255,.2); color: #fff; font-size: 1.5rem; cursor: pointer;
+      z-index: 100000; display: flex; align-items: center; justify-content: center;
+    }
+    .lightbox-close { top: 12px; right: 12px; }
+    .lightbox-nav { top: 50%; transform: translateY(-50%); }
+    .lightbox-nav.prev { left: 10px; }
+    .lightbox-nav.next { right: 10px; }
+
+    .media-player { width: 100%; border-radius: 12px; overflow: hidden; background: #000; border: 2px solid var(--line); }
+    .media-player video { width: 100%; height: auto; max-height: 70vh; display: block; background: #000; }
+    .media-actions { display: flex; gap: 8px; margin-top: 10px; flex-wrap: wrap; }
+    .media-actions button {
+      flex: 1; min-width: 120px; padding: 11px 14px; border-radius: 8px;
+      border: 2px solid var(--line); background: #fff; font-weight: 700; cursor: pointer; font-size: .9rem;
+    }
+    .media-actions button.primary { background: var(--primary); color: #fff; border-color: var(--primary); }
+
+    .footer { background: #0f172a; color: #94a3b8; }
+    .footer h5 { color: var(--secondary); }
+    .copyright { background: var(--primary); color: #bfdbfe; font-size: .85rem; }
+    .section-title { color: var(--primary); border-bottom: 2px solid var(--accent); padding-bottom: 6px; margin-bottom: 1rem; }
+    .pkg-list { font-size: .85rem; text-align: left; margin: 0 0 12px 0; padding-left: 18px; }
+    .pkg-list li { margin-bottom: 3px; }
+
+    .wa-float {
+      position: fixed; right: 16px; bottom: 16px; z-index: 9000;
+      width: 56px; height: 56px; border-radius: 50%; background: var(--green); color: #fff;
+      display: flex; align-items: center; justify-content: center; font-size: 1.9rem;
+      box-shadow: 0 6px 18px rgba(0,0,0,.3);
+    }
+    .wa-float:hover { background: #1da851; color: #fff; }
+
+    #noResults { display: none; }
+
+    @media (max-width: 767.98px) {
+      .hero-overlay .h2 { font-size: 1.35rem; }
+      .pic-slot { height: 110px; font-size: .75rem; }
+      .pkg-list { font-size: .8rem; }
+      .section-title { font-size: 1.15rem; }
+      .topbar { font-size: .78rem; }
+      .gallery-slot { height: 120px; }
+      .ads-strip { height: 160px; }
+      .container.py-5 { padding-top: 1.5rem !important; padding-bottom: 1.5rem !important; }
+    }
+    @media (min-width: 768px) {
+      .pic-slot { height: 150px; }
+      .gallery-slot { height: 190px; }
+      .ads-strip { height: 300px; }
+      .row.g-3 > [class*="col-"] { display: flex; }
+      .row.g-3 > [class*="col-"] > .product-card { width: 100%; }
+    }
+    @media (min-width: 992px) {
+      .container { max-width: 1140px; }
+      .gallery-slot { height: 200px; }
+    }
+
+    /* ===== menu button + panel (customer site) ===== */
+    .menu-btn { position: fixed; top: 12px; right: 12px; z-index: 9500; width: 46px; height: 46px; border: none; border-radius: 12px;
+      background: rgba(11,29,58,.92); color: #fff; font-size: 1.3rem; box-shadow: 0 4px 14px rgba(0,0,0,.35);
+      display: flex; align-items: center; justify-content: center; cursor: pointer; }
+    .menu-btn:hover { background: var(--accent); }
+    .menu-backdrop { position: fixed; inset: 0; z-index: 9600; background: rgba(0,0,0,.5); display: none; }
+    .menu-backdrop.open { display: block; }
+    .menu-panel { position: fixed; top: 0; right: 0; bottom: 0; z-index: 9700; width: min(86vw, 320px); background: #fff;
+      box-shadow: -8px 0 30px rgba(0,0,0,.35); transform: translateX(105%); transition: transform .25s ease;
+      overflow-y: auto; padding: 14px 14px 24px; }
+    .menu-panel.open { transform: none; }
+    .menu-panel a.m-link { display: block; padding: 11px 12px; border-radius: 10px; color: var(--primary); font-weight: 600; }
+    .menu-panel a.m-link:hover { background: #e8eef5; }
+    .menu-panel .m-login { background: var(--primary); color: #fff !important; text-align: center; margin-top: 12px; border-radius: 999px; }
+    .menu-panel .m-login:hover { background: var(--accent); }
+    .menu-head { display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; }
+    .menu-close { border: none; background: #e8eef5; border-radius: 50%; width: 36px; height: 36px; font-size: 1.1rem; }
+    #staffView { min-height: 100vh; }
+    #staffView .wrap { padding-top: 18px; }
+
+
+    /* ===== product cards (photo, name, quantity, price) ===== */
+    .row.g-3 > [class*="col-"] { display: flex; }
+    .row.g-3 > [class*="col-"] > .product-card { width: 100%; }
+    .product-card:has(> .pc-body) { display: flex; flex-direction: column; }
+    .pic-slot { position: relative; }
+    .pc-plus { position: absolute; top: 8px; right: 8px; width: 38px; height: 38px; border-radius: 50%; border: none; background: rgba(11,29,58,.88); color: #fff; font-size: 1.5rem; line-height: 1; display: flex; align-items: center; justify-content: center; }
+    .pc-body { display: flex; flex-direction: column; gap: 3px; padding: 12px; flex: 1; text-align: left; }
+    .pc-name { font-weight: 600; line-height: 1.25; min-height: 2.5em; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+    .pc-body .web-desc { display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+    .pc-qty { font-size: .8rem; color: #64748b; }
+    .pc-price { font-weight: 700; font-size: 1.05rem; color: var(--primary); }
+    .pc-old { font-size: .8rem; color: #94a3b8; }
+    .pc-off { background: #0d9488; color: #fff; font-weight: 700; border-radius: 6px; padding: 1px 6px; font-size: .75rem; }
+    .pc-body .d-grid { margin-top: auto; padding-top: 8px; }
+    .gallery-slot.empty { display: flex; align-items: center; justify-content: center; color: #94a3b8; font-size: 1.6rem; cursor: default; }
+    .media-player { border: none; background: transparent; }
+    /* ===== login over the banner (glass) ===== */
+    #staffView[hidden] { display: none !important; }
+    #staffView.auth { position: relative; display: flex; align-items: center; justify-content: center; min-height: 100vh; background: #0b1d3a url('banner.jpg') center/cover no-repeat fixed; }
+    #staffView.auth::before { content: ''; position: absolute; inset: 0; background: rgba(11,29,58,.5); }
+    #staffView.auth .wrap { position: relative; width: 100%; }
+    #staffView.auth .card { background: rgba(255,255,255,.14); -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px); border: 2px solid rgba(255,255,255,.7); color: #fff; box-shadow: 0 8px 32px rgba(0,0,0,.4); }
+    #staffView.auth .card .brand, #staffView.auth .card .slogan, #staffView.auth .card label, #staffView.auth .card .text-muted, #staffView.auth .card a { color: #fff !important; }
+    #staffView.auth .card .form-control, #staffView.auth .card .form-select { background: rgba(255,255,255,.88); }
+    #staffView.auth .card .btn-outline-primary { color: #fff; border-color: #fff; }
+
+    /* ===== staff area styles ===== */
+
+#staffView .brand { font-weight: 700; font-size: 1.15rem; color: #0b1d3a; line-height: 1.2; }
+#staffView .slogan { font-size: .8rem; color: #64748b; font-style: italic; }
+#staffView .wrap { max-width: 900px; margin: 0 auto; padding: 14px; }
+#staffView .card { border: 2px solid #c5d0de; border-radius: 12px; box-shadow: 0 4px 12px rgba(11,29,58,.08); }
+#staffView .item { background: #fff; border: 2px solid #c5d0de; border-radius: 10px; padding: 10px 12px; margin-bottom: 8px; }
+#staffView .item.unread { border-color: #eab308; background: #fffbeb; }
+#staffView .nav-pills .nav-link { color: #0b1d3a; white-space: nowrap; }
+#staffView .nav-pills .nav-link.active { background: #0b1d3a; color: #fff; }
+#staffView .stat { font-size: 1.4rem; font-weight: 700; color: #0b1d3a; }
+    .pthumb { width: 52px; height: 52px; border-radius: 8px; object-fit: cover; flex: none; }
+    .ph { background: #e2e8f0; color: #64748b; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 1.2rem; }
+    .pthumb.big { width: 84px; height: 84px; }
+    .desc { font-size: .8rem; color: #64748b; }
+    #toast { position: fixed; top: 12px; left: 50%; transform: translateX(-50%); z-index: 20000; display: none; max-width: 92vw; }
+  
+#staffView .brand .ab { color: #3b82f6; } #staffView .brand .md { color: #ef4444; }
+
+  </style>
+</head>
+<body>
+  <!-- MENU BUTTON + PANEL -->
+  <button type="button" class="menu-btn" id="menuBtn" aria-label="Menu"><i class="fas fa-bars"></i></button>
+  <div class="menu-backdrop" id="menuBackdrop"></div>
+  <nav class="menu-panel" id="menuPanel" aria-label="Main menu">
+    <div class="menu-head"><span class="brand-title h5"><span class="ab">AB</span> SIGNS <span class="media">MEDIA</span></span>
+      <button type="button" class="menu-close" id="menuClose" aria-label="Close menu">&#10005;</button></div>
+    <a class="m-link" href="#top">Home</a>
+    <a class="m-link" href="#printing">Printing</a>
+    <a class="m-link" href="#stationery">Stationery</a>
+    <a class="m-link" href="#frames">Frames</a>
+    <a class="m-link" href="#electronics">Electronics</a>
+    <a class="m-link" href="#photography">Photography</a>
+    <a class="m-link" href="#gallery">Gallery</a>
+    <a class="m-link" href="#video">Video</a>
+    <a class="m-link" href="#branding">Branding</a>
+    <a class="m-link" href="#branches">Branches</a>
+    <a class="m-link" href="#feedback">Feedback</a>
+    <a class="m-link" href="#about">About</a>
+    <a class="m-link" href="#contact">Contact</a>
+    <a class="m-link m-login" href="#login" id="menuLogin"><i class="fa fa-user-lock me-1"></i> Login</a>
+  </nav>
+
+  <div id="siteView">
+
+  <!-- FULL-SCREEN BANNER -->
+  <section class="hero-banner" id="top">
+    <video id="bannerVideo" autoplay muted loop playsinline preload="metadata" poster="banner.jpg">
+      <source src="ab video.mp4" type="video/mp4" />
+    </video>
+    <div class="banner-slides" id="bannerSlides">
+      <div class="banner-slide active" style="background-image:url('banner.jpg')"></div>
+      <div class="banner-slide" style="background-image:url('banner1.jpg')"></div>
+      <div class="banner-slide" style="background-image:url('banner2.jpg')"></div>
+    </div>
+    <div class="banner-arrows" id="bannerArrows">
+      <button type="button" id="prevSlide" aria-label="Previous">&#10094;</button>
+      <button type="button" id="nextSlide" aria-label="Next">&#10095;</button>
+    </div>
+    <div class="hero-overlay">
+      <div class="container text-center">
+        <p class="hero-kicker">We Design · We Print · We Brand</p>
+        <h1 class="hero-name">
+          <span style="color:#3b82f6">AB</span>
+          <span style="color:#fff"> SIGNS </span>
+          <span style="color:#ef4444">MEDIA</span>
+        </h1>
+        <p class="tag hero-title">Quality for lifetime memories</p>
+        <button type="button" class="btn btn-wa rounded-pill px-4 me-2 mb-2" data-order data-mode="enquiry" data-item="your services">
+          <i class="fab fa-whatsapp me-1"></i> WhatsApp Order
+        </button>
+        <a href="#photography" class="btn btn-outline-light rounded-pill px-4 mb-2">View Packages</a>
+      </div>
+      <a href="#siteTop" class="scroll-down" aria-label="Scroll down"><i class="fas fa-chevron-down"></i></a>
+    </div>
+  </section>
+
+  <div id="siteTop"></div>
+
+  <div class="topbar">
+    <div class="container d-flex justify-content-between align-items-center flex-wrap gap-2">
+      <div>
+        <a href="#contact">Help</a> /
+        <a href="https://wa.me/256788002309?text=Hello%20AB%20SIGNS%20MEDIA%2C%20I%20would%20like%20to%20make%20an%20enquiry.%20Please%20assist%20me." target="_blank" rel="noopener">WhatsApp</a> /
+        <a href="#branches">Branches</a>
+      </div>
+      <div class="d-none d-md-block">
+        Call: <a href="tel:+256788002309">0788 002 309</a> ·
+        <a href="tel:+256740045771">0740 045 771</a>
+      </div>
+      <div><a href="mailto:absignsmedia@gmail.com">absignsmedia@gmail.com</a></div>
+    </div>
+  </div>
+
+  <div class="container py-3">
+    <div class="row align-items-center g-3">
+      <div class="col-lg-3">
+        <a href="#" class="brand-title h4">
+          <span class="ab">AB</span> SIGNS <span class="media">MEDIA</span>
+        </a>
+        <div class="small text-muted">Quality for lifetime memories</div>
+      </div>
+      <div class="col-lg-6">
+        <div class="input-group">
+          <input type="text" class="form-control" id="searchBox" placeholder="Search printing, stationery, photo..." />
+          <select class="form-select" style="max-width:150px" id="catFilter">
+            <option value="">All</option>
+            <option value="printing">Printing</option>
+            <option value="stationery">Stationery</option>
+            <option value="frames">Frames &amp; Boards</option>
+            <option value="electronics">Electronics</option>
+            <option value="photography">Photography</option>
+            <option value="branding">Branding</option>
+          </select>
+          <button class="btn btn-primary" type="button" id="searchBtn" aria-label="Search"><i class="fas fa-search"></i></button>
+        </div>
+      </div>
+      <div class="col-lg-3 text-lg-end">
+        <a class="btn btn-wa rounded-pill px-3" href="https://wa.me/256788002309?text=Hello%20AB%20SIGNS%20MEDIA%2C%20I%20would%20like%20to%20make%20an%20enquiry.%20Please%20assist%20me." target="_blank" rel="noopener">
+          <i class="fab fa-whatsapp me-1"></i> Order WhatsApp
+        </a>
+      </div>
+    </div>
+  </div>
+
+  
+
+
+
+  <div class="container-fluid bg-white border-bottom py-3">
+    <div class="container">
+      <div class="row text-center g-3">
+        <div class="col-4 col-md-2"><i class="fa fa-print fa-lg text-primary"></i><div class="small mt-1">Printing</div></div>
+        <div class="col-4 col-md-2"><i class="fa fa-pen-fancy fa-lg text-primary"></i><div class="small mt-1">Stationery</div></div>
+        <div class="col-4 col-md-2"><i class="fa fa-camera fa-lg text-primary"></i><div class="small mt-1">Photography</div></div>
+        <div class="col-4 col-md-2"><i class="fa fa-tshirt fa-lg text-primary"></i><div class="small mt-1">Branding</div></div>
+        <div class="col-4 col-md-2"><i class="fab fa-whatsapp fa-lg" style="color:#25D366"></i><div class="small mt-1">WhatsApp</div></div>
+        <div class="col-4 col-md-2"><i class="fa fa-map-marker-alt fa-lg text-primary"></i><div class="small mt-1">4 Branches</div></div>
+      </div>
+    </div>
+  </div>
+
+  <section id="products" class="container py-5">
+    <h2 class="section-title">Products &amp; Services</h2>
+
+    <div id="noResults" class="alert alert-warning">No product found. Try another word, or <a href="#contact">contact us</a> — we may still have it.</div>
+
+    <div class="cat-block" data-block="printing">
+      <h4 id="printing" class="text-primary mb-3">Printing</h4>
+      <div class="row g-3 mb-5" id="gridPrinting"></div>
+    </div>
+
+    <div class="cat-block" data-block="stationery">
+      <h4 id="stationery" class="text-primary mb-3">Popular Services &amp; Stationery</h4>
+      <div class="row g-3 mb-5" id="gridStationery"></div>
+    </div>
+
+    <div class="cat-block" data-block="frames">
+      <h4 id="frames" class="text-primary mb-3">Frames &amp; Boards</h4>
+      <div class="row g-3 mb-5" id="gridFrames"></div>
+    </div>
+
+    <div class="cat-block" data-block="electronics">
+      <h4 id="electronics" class="text-primary mb-3">Electronics &amp; Accessories</h4>
+      <div class="row g-3 mb-5" id="gridElectronics"></div>
+    </div>
+
+    <!-- OFFERS -->
+    <h4 class="text-primary mb-3">Offers</h4>
+    <div id="ads" class="ads-strip mb-5" aria-label="Offers">
+      <span class="ads-label">Offers</span>
+    </div>
+
+    <!-- PHOTOGRAPHY PACKAGES -->
+    <div class="cat-block" data-block="photography">
+      <h4 id="photography" class="text-primary mb-3">Photography Packages</h4>
+      <div class="row g-3 mb-5">
+        <div class="col-md-4" data-cat="photography">
+          <div class="product-card p-4 text-center">
+            <h5 class="fw-bold">SILVER</h5>
+            <div class="price fs-4">UGX 800,000/=</div>
+            <div class="subprice mb-2">Without video: 400,000/=</div>
+            <ul class="pkg-list">
+              <li>100 photos with an album</li>
+              <li>30 edited soft copies</li>
+              <li>2 A4 frames</li>
+              <li>2 A4 boards</li>
+              <li>2 A3 frames</li>
+              <li>One videographer</li>
+            </ul>
+            <button type="button" class="btn btn-wa rounded-pill w-100" data-order data-mode="book" data-item="SILVER (UGX 800,000)">
+              <i class="fab fa-whatsapp"></i> Book Silver
+            </button>
+          </div>
+        </div>
+        <div class="col-md-4" data-cat="photography">
+          <div class="product-card p-4 text-center outlined">
+            <span class="badge bg-primary mb-2">RECOMMENDED</span>
+            <h5 class="fw-bold">PLATINUM</h5>
+            <div class="price fs-4">UGX 1,600,000/=</div>
+            <div class="subprice mb-2">Without video: 800,000/=</div>
+            <ul class="pkg-list">
+              <li>200 photos with an album</li>
+              <li>70 edited soft copies</li>
+              <li>4 A4 frames</li>
+              <li>3 A4 boards</li>
+              <li>4 A3 frames</li>
+              <li>Two videographers</li>
+            </ul>
+            <button type="button" class="btn btn-wa rounded-pill w-100" data-order data-mode="book" data-item="PLATINUM (UGX 1,600,000)">
+              <i class="fab fa-whatsapp"></i> Book Platinum
+            </button>
+          </div>
+        </div>
+        <div class="col-md-4" data-cat="photography">
+          <div class="product-card p-4 text-center">
+            <h5 class="fw-bold">GOLD</h5>
+            <div class="price fs-4">UGX 3,000,000/=</div>
+            <ul class="pkg-list">
+              <li>400 photos with an album</li>
+              <li>100 edited soft copies</li>
+              <li>Flash with unedited photos</li>
+              <li>5 A4 frames</li>
+              <li>5 A4 boards</li>
+              <li>4 A3 frames</li>
+              <li>Two videographers</li>
+              <li>A drone</li>
+            </ul>
+            <button type="button" class="btn btn-wa rounded-pill w-100" data-order data-mode="book" data-item="GOLD (UGX 3,000,000)">
+              <i class="fab fa-whatsapp"></i> Book Gold
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- GALLERY -->
+    <h4 id="gallery" class="text-primary mb-3">Photo Gallery</h4>
+    <p class="text-muted small mb-3">Our shoots and work so far. Tap a photo for full screen.</p>
+    <div class="row g-2 g-md-3 mb-5" id="galleryGrid"></div>
+
+    <!-- MEDIA PLAYER -->
+    <h4 id="video" class="text-primary mb-3">Watch &amp; Listen</h4>
+    <div class="mb-5">
+      <div class="media-player">
+        <video id="promoVideo" controls playsinline preload="none" poster="banner.jpg">
+          <source src="lv_0_20261027104722.mp4" type="video/mp4" />
+          Your browser does not support video.
+        </video>
+      </div>
+      <audio id="promoAudio" controls preload="none" style="width:100%; margin-top:12px;">
+        <source src="audio.mp3" type="audio/mpeg" />
+        <source src="audio.m4a" type="audio/mp4" />
+      </audio>
+    </div>
+
+    <!-- BRANDING -->
+    <div class="cat-block" data-block="branding">
+      <h4 id="branding" class="text-primary mb-3">Branding</h4>
+      <div class="row g-3 mb-5" id="gridBranding"></div>
+    </div>
+  </section>
+
+  <!-- BRANCHES -->
+  <section id="branches" class="container pb-5">
+    <h2 class="section-title">Branches</h2>
+    <div class="row g-3">
+      <div class="col-md-6 col-lg-3">
+        <div class="product-card p-4">
+          <h5>Bududa Main</h5>
+          <p class="text-muted small">Bududa Trading Centre / Bukigai</p>
+          <p class="mb-1"><a href="tel:+256788002309"><i class="fa fa-phone me-1"></i> 0788 002 309</a></p>
+          <p class="mb-2"><a href="https://wa.me/256788002309" target="_blank" rel="noopener"><i class="fab fa-whatsapp me-1"></i> WhatsApp</a></p>
+          <a class="btn btn-outline-primary btn-sm" href="https://maps.app.goo.gl/Lj9NVtewyzHs3FYbA?g_st=ac" target="_blank" rel="noopener">Map</a>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-3">
+        <div class="product-card p-4">
+          <h5>Konokoyi</h5>
+          <p class="text-muted small">After Namaitsu Trading Center</p>
+          <p class="mb-1"><a href="tel:+256769801082"><i class="fa fa-phone me-1"></i> 0769 801 082</a></p>
+          <p class="mb-2"><a href="https://wa.me/256769801082" target="_blank" rel="noopener"><i class="fab fa-whatsapp me-1"></i> WhatsApp</a></p>
+          <a class="btn btn-outline-primary btn-sm" href="https://maps.app.goo.gl/vSrAGV5ETdqiRXiC7?g_st=ac" target="_blank" rel="noopener">Map</a>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-3">
+        <div class="product-card p-4">
+          <h5>Lukhonje</h5>
+          <p class="text-muted small">Bukigai, Uganda</p>
+          <p class="mb-1"><a href="tel:+256761237885"><i class="fa fa-phone me-1"></i> 0761 237 885</a></p>
+          <p class="mb-2"><a href="https://wa.me/256761237885" target="_blank" rel="noopener"><i class="fab fa-whatsapp me-1"></i> WhatsApp</a></p>
+          <a class="btn btn-outline-primary btn-sm" href="https://maps.app.goo.gl/o3bxfYCWjSwap8Ga9" target="_blank" rel="noopener">Map</a>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-3">
+        <div class="product-card p-4">
+          <h5>Kamu Market</h5>
+          <p class="text-muted small">Bulambuli · Kibanda Road</p>
+          <p class="mb-1"><a href="tel:+256791266453"><i class="fa fa-phone me-1"></i> 0791 266 453</a></p>
+          <p class="mb-2"><a href="https://wa.me/256791266453" target="_blank" rel="noopener"><i class="fab fa-whatsapp me-1"></i> WhatsApp</a></p>
+          <!-- Add a Map button here when you have the Kamu Market Google Maps link -->
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEEDBACK -->
+  <section id="feedback" class="container pb-5">
+    <h2 class="section-title">Customer Feedback</h2>
+    <div class="product-card p-4">
+      <p class="text-muted small mb-3">Tell us who served you and how we did. Send by WhatsApp or Email.</p>
+      <form onsubmit="return false;">
+        <label class="form-label fw-bold small" for="cust-name">Your Name</label>
+        <input id="cust-name" type="text" class="form-control mb-2" placeholder="Full name" />
+        <label class="form-label fw-bold small" for="served-by">Who served you? (Branch / Staff)</label>
+        <select id="served-by" class="form-select mb-2">
+          <option value="">-- Choose --</option>
+          <option>Wakoba Abraham (CEO)</option>
+          <option>Bududa Main</option>
+          <option>Konokoyi Branch</option>
+          <option>Lukhonje Branch</option>
+          <option>Kamu Market</option>
+        </select>
+        <label class="form-label fw-bold small" for="rating">Rating</label>
+        <select id="rating" class="form-select mb-2">
+          <option value="">-- Choose --</option>
+          <option>5 Stars - Excellent</option>
+          <option>4 Stars - Good</option>
+          <option>3 Stars - Average</option>
+          <option>2 Stars - Needs Improvement</option>
+          <option>1 Star - Poor</option>
+        </select>
+        <label class="form-label fw-bold small" for="comments">Comment</label>
+        <textarea id="comments" class="form-control mb-3" rows="3" placeholder="Your comment"></textarea>
+        <div class="d-flex gap-2 flex-wrap">
+          <button type="button" class="btn btn-wa flex-fill" onclick="sendFeedback('wa')"><i class="fab fa-whatsapp me-1"></i> Send WhatsApp</button>
+          <button type="button" class="btn btn-primary flex-fill" onclick="sendFeedback('email')"><i class="fa fa-envelope me-1"></i> Send Email</button>
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about" class="container pb-5">
+    <h2 class="section-title">About AB SIGNS MEDIA SERVICES UGANDA</h2>
+    <div class="product-card p-4">
+      <p class="fw-bold mb-3">YOUR CREATIVE PARTNER FOR DESIGN, PRINTING, BRANDING &amp; MEMORIES</p>
+      <p class="mb-3" style="font-size:.92rem;color:#475569;">
+        AB SIGNS MEDIA SERVICES UGANDA is a creative media, printing, photography, and branding company dedicated to turning ideas into quality visual experiences. We help individuals, businesses, organizations, schools, teams, and events bring their ideas to life through professional design, printing, photography, branding, and customized products.
+      </p>
+      <div class="collapse" id="aboutMore">
+      <p class="mb-3" style="font-size:.92rem;color:#475569;">
+        Our services include graphic design, logo design, digital printing, DTF printing, T-shirt and cap branding, jersey customization, banners and posters, labels and stickers, large-format printing, photography, videography, customized gifts, success cards, money bouquets, student trunk &amp; chop box branding, and much more.
+      </p>
+      <p class="mb-2 fw-bold">OUR FOCUS</p>
+      <p class="mb-3" style="font-size:.92rem;color:#475569;">
+        Our focus is on quality, creativity, professionalism, and customer satisfaction. Whether you need to promote your business, brand your team, preserve a special moment, prepare for an event, or create a personalized gift, we work with you to turn your vision into something you can proudly share.
+      </p>
+      <p class="mb-3" style="font-size:.92rem;color:#475569;">
+        We are proud to serve our customers through our branches and growing network, bringing quality creative, printing, branding, and media services closer to our customers. As we continue to grow, our commitment remains the same: creativity, professionalism, reliability, and quality in everything we do.
+      </p>
+      <p class="fw-bold mb-0" style="color:#0b1d3a;font-size:1rem;">BRING YOUR IDEA. WE BRING IT TO LIFE.</p>
+      </div>
+      <button type="button" class="btn btn-outline-primary btn-sm rounded-pill mt-2" id="aboutBtn" data-bs-toggle="collapse" data-bs-target="#aboutMore" aria-expanded="false" aria-controls="aboutMore">Read more</button>
+    </div>
+  </section>
+
+  <!-- CONTACT + CEO -->
+  <section id="contact" class="container pb-5">
+    <div class="row g-3">
+      <div class="col-md-5">
+        <div class="product-card p-4 text-center">
+          <h5>CEO</h5>
+          <div class="pic-slot mx-auto mb-3" style="width:120px;height:120px;border-radius:50%;overflow:hidden;border:3px solid var(--accent);">
+            <img src="ceo_photo.png" alt="Wakoba Abraham, CEO of AB SIGNS MEDIA" style="width:100%;height:100%;object-fit:cover;" onerror="this.parentElement.innerHTML='CEO photo'" />
+          </div>
+          <h4>Wakoba Abraham</h4>
+          <p class="text-muted">We deliver premium printing, custom stationery, and professional photography. We handle every project with absolute precision to bring your ideas to life. Our goal is to constantly innovate and be your top choice for creative visual work.</p>
+          <p class="fw-bold mb-2"><i class="fa fa-phone me-1"></i> CEO: <a href="tel:+256763147213">0763 147 213</a></p>
+          <a class="btn btn-sm btn-outline-primary me-1" href="tel:+256763147213">Call</a>
+          <a class="btn btn-sm btn-wa me-1" href="https://wa.me/256763147213" target="_blank" rel="noopener">WhatsApp</a>
+          <a class="btn btn-sm btn-outline-secondary" href="mailto:absignsmedia@gmail.com">Email</a>
+        </div>
+      </div>
+      <div class="col-md-7">
+        <div class="product-card p-4">
+          <h5>Contact AB SIGNS MEDIA</h5>
+          <p class="mb-1"><i class="fa fa-envelope me-1"></i> <a href="mailto:absignsmedia@gmail.com">absignsmedia@gmail.com</a></p>
+          <p class="mb-3"><i class="fa fa-phone me-1"></i> <a href="tel:+256788002309">0788 002 309</a> · <a href="tel:+256740045771">0740 045 771</a></p>
+          <div class="d-flex gap-2 flex-wrap">
+            <a class="btn btn-outline-primary btn-sm" href="https://www.facebook.com/profile.php?id=100083232823616" target="_blank" rel="noopener"><i class="fab fa-facebook"></i> Facebook</a>
+            <a class="btn btn-outline-dark btn-sm" href="https://vm.tiktok.com/ZS9SNFvcjCCsK-V0xlL/" target="_blank" rel="noopener"><i class="fab fa-tiktok"></i> TikTok</a>
+            <a class="btn btn-outline-danger btn-sm" href="https://youtube.com/@coolitabrahx98?si=DXquqaGz6v2GjuWI" target="_blank" rel="noopener"><i class="fab fa-youtube"></i> YouTube</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer py-4">
+    <div class="container">
+      <div class="row g-3">
+        <div class="col-md-6">
+          <h5>AB SIGNS MEDIA SERVICES UGANDA</h5>
+          <p class="small mb-0">Design, printing, stationery, photography &amp; branding.<br/>Bring your idea. We bring it to life.</p>
+        </div>
+        <div class="col-md-6 text-md-end">
+          <button type="button" class="btn btn-wa rounded-pill" data-order data-mode="enquiry" data-item="your services">
+            <i class="fab fa-whatsapp"></i> WhatsApp
+          </button>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <div class="copyright py-3 text-center">
+    © 2026 AB SIGNS MEDIA SERVICES UGANDA. All Rights Reserved.
+    <div class="small">Designed &amp; developed by Kasim Kibwana</div>
+  </div>
+
+  <!-- Floating WhatsApp -->
+  <a class="wa-float" href="https://wa.me/256788002309?text=Hello%20AB%20SIGNS%20MEDIA%2C%20I%20would%20like%20to%20make%20an%20enquiry.%20Please%20assist%20me." target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+
+  </div><!-- /siteView -->
+
+  <!-- STAFF AREA (shown after pressing Menu > Login) -->
+  <div id="staffView" hidden>
+    <div class="wrap" id="app"></div>
+  </div>
+
+  <div id="toast" class="alert alert-success py-2 px-3 shadow"></div>
+  
+
+  <input type="file" id="fCam" accept="image/*" capture="environment" hidden />
+  <input type="file" id="fFile" accept="image/*" hidden />
+
+  <!-- Stock modal -->
+  <div class="modal fade" id="stockModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header"><h5 class="modal-title" id="mTitle"></h5><button type="button" class="btn-close" data-bs-dismiss="modal"></button></div>
+        <div class="modal-body">
+          <div class="small text-muted mb-2" id="mInfo"></div>
+          <label class="form-label small fw-bold" id="mQtyLabel">Quantity</label>
+          <input id="mQty" type="number" min="0" inputmode="numeric" class="form-control mb-2" />
+          <div id="mSupWrap">
+            <label class="form-label small fw-bold">Supplier (optional)</label>
+            <input id="mSupplier" type="text" class="form-control mb-2" placeholder="Who supplied it?" />
+          </div>
+          <label class="form-label small fw-bold">Note (optional)</label>
+          <input id="mNote" type="text" class="form-control mb-2" placeholder="e.g. delivery from supplier" />
+          <div id="mErr" class="text-danger small mb-2" style="display:none"></div>
+          <button class="btn btn-primary w-100" data-act="save">Save</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Edit product modal -->
+  <div class="modal fade" id="pModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header"><h5 class="modal-title">Edit product</h5><button type="button" class="btn-close" data-bs-dismiss="modal"></button></div>
+        <div class="modal-body">
+          <label class="form-label small fw-bold">Name</label><input id="epName" class="form-control mb-2" />
+          <div class="row g-2">
+            <div class="col-6"><label class="form-label small fw-bold">Category</label><select id="epCat" class="form-select mb-2"></select></div>
+            <div class="col-6"><label class="form-label small fw-bold">Condition</label><select id="epCond" class="form-select mb-2"><option value="new">New</option><option value="used">Used</option></select></div>
+          </div>
+          <label class="form-label small fw-bold">Price in UGX (empty = "Ask price")</label><input id="epPrice" type="number" min="0" inputmode="numeric" class="form-control mb-2" />
+          <label class="form-label small fw-bold">Old price UGX (optional — shows a discount)</label><input id="epOld" type="number" min="0" inputmode="numeric" class="form-control mb-2" />
+          <label class="form-label small fw-bold">Description</label><textarea id="epDesc" rows="3" class="form-control mb-2"></textarea>
+          <div class="form-check mb-2"><input class="form-check-input" type="checkbox" id="epWeb" /><label class="form-check-label small" for="epWeb">Show on the customer website</label></div>
+          <div id="epErr" class="text-danger small mb-2" style="display:none"></div>
+          <button class="btn btn-primary w-100" data-act="saveprod">Save changes</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  
+
+  <!-- Lightbox -->
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true">
+    <button type="button" class="lightbox-close" id="lightboxClose" aria-label="Close">&#10005;</button>
+    <button type="button" class="lightbox-nav prev" id="lightboxPrev" aria-label="Previous photo">&#10094;</button>
+    <img id="lightboxImg" src="" alt="Full view" />
+    <button type="button" class="lightbox-nav next" id="lightboxNext" aria-label="Next photo">&#10095;</button>
+  </div>
+
+  <!-- ORDER MODAL -->
+  <div class="modal fade" id="orderModal" tabindex="-1" aria-labelledby="orderTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="orderTitle">Order</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <p class="small text-muted mb-3" id="orderSub"></p>
+          <form id="orderForm" onsubmit="return false;" novalidate>
+            <label class="form-label fw-bold small" for="oName">Your name *</label>
+            <input id="oName" class="form-control mb-2" type="text" placeholder="e.g. Mary Nambozo" autocomplete="name" />
+            <label class="form-label fw-bold small" for="oPlace">Where are you from? *</label>
+            <input id="oPlace" class="form-control mb-2" type="text" placeholder="Village / Town e.g. Bududa" autocomplete="address-level2" />
+            <label class="form-label fw-bold small" for="oDetails">Quantity or details (optional)</label>
+            <textarea id="oDetails" class="form-control mb-2" rows="2" placeholder="e.g. 50 cards, size A5, needed by Friday"></textarea>
+            <label class="form-label fw-bold small" for="oBranch">Send to which branch?</label>
+            <select id="oBranch" class="form-select mb-3"></select>
+            <div id="oError" class="text-danger small mb-2" style="display:none;">Please enter your name and where you are from.</div>
+            <button type="button" class="btn btn-wa w-100 py-2" id="oSend"><i class="fab fa-whatsapp me-1"></i> Continue to WhatsApp</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    /* =====================================================
+       EDIT HERE — products, gallery and offers live in lists
+       Each product: [ 'Name', 'image-file.jpg' ]
+       To add a product, just add a new line in the right list.
+       ===================================================== */
+    var PRINTING = [
+      ['Banners & Posters', 'print-banner.jpg'],
+      ['Business Cards', 'print-cards.jpg'],
+      ['Stickers & Labels', 'print-stickers.jpg'],
+      ['Large Format', 'print-large.jpg']
+    ];
+    var STATIONERY = [
+      ['Photocopy Paper / Rim', 'rim.jpg'],
+      ['Photo Papers', 'photo-paper.jpg'],
+      ['Epson Ink', 'epson-ink.jpg'],
+      ['Toner', 'toner.jpg'],
+      ['A4 Bond Paper', 'a4-paper.jpg'],
+      ['Envelopes', 'envelopes.jpg'],
+      ['Files & Folders', 'files.jpg'],
+      ['Pens', 'pens.jpg'],
+      ['Markers', 'markers.jpg'],
+      ['Notebooks', 'notebooks.jpg'],
+      ['Sellotape & Packing Tape', 'tape.jpg'],
+      ['Laminating', 'laminating.jpg'],
+      ['Binding & Spiral', 'binding.jpg']
+    ];
+    var FRAMES = [
+      ['Frames', 'frames.jpg'],
+      ['Boards', 'boards.jpg'],
+      ['Photo Boards', 'photo-boards.jpg']
+    ];
+    var ELECTRONICS = [
+      ['Fridge Guards', 'fridge-guard.jpg'],
+      ['USB Cables', 'usb-cable.jpg'],
+      ['HDMI Cables', 'hdmi-cable.jpg']
+    ];
+    var BRANDING = [
+      ['T-shirt Branding', 'tshirt.jpg'],
+      ['Success Cards & Gifts', 'success-card.jpg'],
+      ['Caps & Jerseys', 'caps.jpg']
+    ];
+    var ADS = ['ad1.jpg', 'box.jpg', 'epson in.jpg', 'p rim.jpg', 'rim.jpg', 'toner.jpg',
+               'print-stickers.jpg', 'print-large.jpg', 'files.jpg', 'Envelopes (3).jpg'];
+    var GALLERY = ['cup.JPG', 'edit 2.jpg', 'j3.jpg', 'mm rose.jpg', 'aisha 2.jpg',
+                   'photo.jpg', 'peace edit.jpg', 'Edit 3.jpg', 'j2.jpg', 'woman.png'];
+    for (var gi = 11; gi <= 20; gi++) GALLERY.push('gallery' + gi + '.jpg');
+    var BRANCHES = [
+      { name: 'Bududa Main', phone: '256788002309' },
+      { name: 'Konokoyi', phone: '256769801082' },
+      { name: 'Lukhonje', phone: '256761237885' },
+      { name: 'Kamu Market', phone: '256791266453' }
+    ];
+
+    /* ---------- helpers ---------- */
+    function esc(s) {
+      return String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+    }
+
+    /* ---------- render product cards ---------- */
+    function renderGrid(gridId, items, cat, colClass) {
+      var html = items.map(function (it) {
+        return '<div class="' + colClass + '" data-cat="' + cat + '">' +
+          '<div class="product-card">' +
+            '<div class="pic-slot"><img loading="lazy" src="' + esc(it[1]) + '" alt="' + esc(it[0]) + ' — AB SIGNS MEDIA" data-fallback="' + esc(it[0]) + '" /><button type="button" class="pc-plus" data-order data-mode="order" data-item="' + esc(it[0]) + '" aria-label="Order">+</button></div>' +
+            '<div class="pc-body">' +
+              '<div class="pc-name">' + esc(it[0]) + '</div>' +
+              '<div class="d-grid gap-1">' +
+                '<button type="button" class="btn btn-outline-success btn-sm rounded-pill" data-order data-mode="price" data-item="' + esc(it[0]) + '">Ask price</button>' +
+                '<button type="button" class="btn btn-wa btn-sm rounded-pill" data-order data-mode="order" data-item="' + esc(it[0]) + '"><i class="fab fa-whatsapp"></i> Order</button>' +
+              '</div>' +
+            '</div>' +
+          '</div></div>';
+      }).join('');
+      document.getElementById(gridId).innerHTML = html;
+    }
+    renderGrid('gridPrinting', PRINTING, 'printing', 'col-6 col-md-3');
+    renderGrid('gridStationery', STATIONERY, 'stationery', 'col-6 col-md-3');
+    renderGrid('gridFrames', FRAMES, 'frames', 'col-6 col-md-4');
+    renderGrid('gridElectronics', ELECTRONICS, 'electronics', 'col-6 col-md-4');
+    renderGrid('gridBranding', BRANDING, 'branding', 'col-6 col-md-4');
+
+    document.querySelectorAll('img[data-fallback]').forEach(function (img) {
+      img.addEventListener('error', function () { img.parentElement.textContent = img.getAttribute('data-fallback'); });
+    });
+
+    /* ---------- offers ---------- */
+    var adsBox = document.getElementById('ads');
+    ADS.forEach(function (f, i) {
+      var d = document.createElement('div');
+      d.className = 'ads-slide' + (i === 0 ? ' active' : '');
+      d.style.backgroundImage = 'url("' + encodeURI(f) + '")';
+      adsBox.appendChild(d);
+    });
+    var ads = Array.from(document.querySelectorAll('.ads-slide'));
+    var adIdx = 0;
+    setInterval(function () {
+      if (!ads.length) return;
+      ads[adIdx].classList.remove('active');
+      adIdx = (adIdx + 1) % ads.length;
+      ads[adIdx].classList.add('active');
+    }, 3500);
+
+    /* ---------- gallery + lightbox ---------- */
+    var galleryGrid = document.getElementById('galleryGrid');
+    galleryGrid.innerHTML = GALLERY.map(function (f, i) {
+      return '<div class="col-6 col-md-3"><div class="gallery-slot"><img loading="lazy" src="' + esc(f) + '" alt="AB SIGNS MEDIA work ' + (i + 1) + '" /></div></div>';
+    }).join('');
+    galleryGrid.querySelectorAll('img').forEach(function (img) {
+      img.addEventListener('error', function () { var sl = img.closest('.gallery-slot'); sl.classList.add('empty'); sl.innerHTML = '<i class="fas fa-camera"></i>'; });
+    });
+
+    var lightbox = document.getElementById('lightbox');
+    var lightboxImg = document.getElementById('lightboxImg');
+    var lbList = [], lbIdx = 0;
+    function showLb(n) {
+      lbIdx = (n + lbList.length) % lbList.length;
+      lightboxImg.src = lbList[lbIdx];
+    }
+    galleryGrid.addEventListener('click', function (e) {
+      if (e.target.closest('.empty')) return;
+      var slot = e.target.closest('.gallery-slot');
+      if (!slot) return;
+      var imgs = Array.from(galleryGrid.querySelectorAll('.col-6')).filter(function (c) { return c.style.display !== 'none' && !c.querySelector('.empty'); })
+        .map(function (c) { return c.querySelector('img'); });
+      lbList = imgs.map(function (i) { return i.src; });
+      var clicked = slot.querySelector('img');
+      showLb(imgs.indexOf(clicked));
+      lightbox.classList.add('open');
+      document.body.style.overflow = 'hidden';
+    });
+    function closeLightbox() {
+      lightbox.classList.remove('open');
+      lightboxImg.src = '';
+      document.body.style.overflow = '';
+    }
+    document.getElementById('lightboxClose').addEventListener('click', closeLightbox);
+    document.getElementById('lightboxPrev').addEventListener('click', function () { showLb(lbIdx - 1); });
+    document.getElementById('lightboxNext').addEventListener('click', function () { showLb(lbIdx + 1); });
+    lightbox.addEventListener('click', function (e) { if (e.target === lightbox) closeLightbox(); });
+    document.addEventListener('keydown', function (e) {
+      if (!lightbox.classList.contains('open')) return;
+      if (e.key === 'Escape') closeLightbox();
+      if (e.key === 'ArrowLeft') showLb(lbIdx - 1);
+      if (e.key === 'ArrowRight') showLb(lbIdx + 1);
+    });
+
+    /* ---------- search + filter ---------- */
+    function filterItems() {
+      var q = (document.getElementById('searchBox').value || '').toLowerCase().trim();
+      var cat = document.getElementById('catFilter').value;
+      var anyVisible = false;
+      document.querySelectorAll('[data-cat]').forEach(function (el) {
+        var okCat = !cat || el.getAttribute('data-cat') === cat;
+        var okQ = !q || el.innerText.toLowerCase().indexOf(q) !== -1;
+        var show = okCat && okQ;
+        el.style.display = show ? '' : 'none';
+        if (show) anyVisible = true;
+      });
+      document.querySelectorAll('.cat-block').forEach(function (b) {
+        var has = Array.from(b.querySelectorAll('[data-cat]')).some(function (el) { return el.style.display !== 'none'; });
+        b.style.display = has ? '' : 'none';
+      });
+      document.getElementById('noResults').style.display = anyVisible ? 'none' : 'block';
+    }
+    document.getElementById('searchBox').addEventListener('keyup', filterItems);
+    document.getElementById('catFilter').addEventListener('change', filterItems);
+    document.getElementById('searchBtn').addEventListener('click', filterItems);
+
+    /* ---------- hero banner ---------- */
+    var slides = Array.from(document.querySelectorAll('.banner-slide'));
+    var idx = 0;
+    function showSlide(n) {
+      slides.forEach(function (s) { s.classList.remove('active'); });
+      idx = (n + slides.length) % slides.length;
+      slides[idx].classList.add('active');
+    }
+    document.getElementById('prevSlide').onclick = function () { showSlide(idx - 1); };
+    document.getElementById('nextSlide').onclick = function () { showSlide(idx + 1); };
+    setInterval(function () { showSlide(idx + 1); }, 5000);
+
+    var bannerVideo = document.getElementById('bannerVideo');
+    function useVideo() {
+      document.getElementById('bannerSlides').style.display = 'none';
+      document.getElementById('bannerArrows').style.display = 'none';
+    }
+    if (bannerVideo) {
+      bannerVideo.addEventListener('loadeddata', useVideo);
+      bannerVideo.addEventListener('playing', useVideo);
+      var vs = bannerVideo.querySelector('source');
+      if (vs) vs.addEventListener('error', function () {
+        bannerVideo.style.display = 'none';
+        document.getElementById('bannerSlides').style.display = 'block';
+        document.getElementById('bannerArrows').style.display = 'flex';
+      });
+    }
+
+    /* ---------- promo video + audio ---------- */
+    var promoVideo = document.getElementById('promoVideo');
+    var btnFs = document.getElementById('btnFullscreen');
+    var btnPp = document.getElementById('btnPlayPause');
+    if (btnFs && promoVideo) {
+      btnFs.addEventListener('click', function () {
+        if (promoVideo.requestFullscreen) promoVideo.requestFullscreen();
+        else if (promoVideo.webkitEnterFullscreen) promoVideo.webkitEnterFullscreen();
+        else if (promoVideo.webkitRequestFullscreen) promoVideo.webkitRequestFullscreen();
+      });
+    }
+    if (btnPp && promoVideo) {
+      btnPp.addEventListener('click', function () {
+        if (promoVideo.paused) promoVideo.play(); else promoVideo.pause();
+      });
+    }
+    var promoAudio = document.getElementById('promoAudio');
+    var audioSources = promoAudio ? promoAudio.querySelectorAll('source') : [];
+    if (audioSources.length) {
+      audioSources[audioSources.length - 1].addEventListener('error', function () { promoAudio.style.display = 'none'; });
+    }
+
+    /* ---------- close mobile menu after tapping a link ---------- */
+    document.querySelectorAll('#navMain .nav-link').forEach(function (a) {
+      a.addEventListener('click', function () {
+        var el = document.getElementById('navMain');
+        if (el.classList.contains('show')) bootstrap.Collapse.getOrCreateInstance(el).hide();
+      });
+    });
+
+    /* ---------- ORDER POP-UP + WHATSAPP MESSAGE ---------- */
+    var orderModalEl = document.getElementById('orderModal');
+    var orderModal = new bootstrap.Modal(orderModalEl);
+    var oBranch = document.getElementById('oBranch');
+    BRANCHES.forEach(function (b, i) {
+      var o = document.createElement('option');
+      o.value = i; o.textContent = b.name;
+      oBranch.appendChild(o);
+    });
+    var current = { item: '', mode: 'order' };
+
+    function lsGet(k) { try { return localStorage.getItem(k) || ''; } catch (e) { return ''; } }
+    function lsSet(k, v) { try { localStorage.setItem(k, v); } catch (e) {} }
+
+    function buildMessage(name, place, details) {
+      var it = current.item, text;
+      var intro = 'Hello AB SIGNS MEDIA 👋, my name is ' + name + ' and I am from ' + place + '. ';
+      if (current.mode === 'price') {
+        text = intro + 'I would like to know the price of *' + it + '*. Please tell me the available options and how long it takes to get it. Thank you.';
+      } else if (current.mode === 'book') {
+        text = intro + 'I would like to book the *' + it + '* photography package. Please share the available dates and how I can confirm my booking. Thank you.';
+      } else if (current.mode === 'enquiry') {
+        text = intro + 'I would like to make an enquiry about ' + it + '. Please assist me. Thank you.';
+      } else {
+        text = intro + 'I would like to place an order for *' + it + '*. Please confirm that it is available, the total price, and whether I can pick it up or have it delivered. Thank you.';
+      }
+      if (details) text += '\n\nMore details: ' + details;
+      return text;
+    }
+
+    document.addEventListener('click', function (e) {
+      var btn = e.target.closest('[data-order]');
+      if (!btn) return;
+      current.item = btn.getAttribute('data-item');
+      current.mode = btn.getAttribute('data-mode') || 'order';
+      var titles = { price: 'Ask price', order: 'Order', book: 'Book package', enquiry: 'WhatsApp us' };
+      document.getElementById('orderTitle').textContent = titles[current.mode] + ' — ' + current.item;
+      document.getElementById('orderSub').textContent = 'Tell us a little about you, then we open WhatsApp with your message ready.';
+      document.getElementById('oName').value = lsGet('abs_name');
+      document.getElementById('oPlace').value = lsGet('abs_place');
+      document.getElementById('oDetails').value = '';
+      document.getElementById('oError').style.display = 'none';
+      var saved = lsGet('abs_branch');
+      if (saved !== '' && BRANCHES[+saved]) oBranch.value = saved;
+      orderModal.show();
+    });
+    orderModalEl.addEventListener('shown.bs.modal', function () {
+      var n = document.getElementById('oName');
+      (n.value ? document.getElementById('oPlace') : n).focus();
+    });
+
+    document.getElementById('oSend').addEventListener('click', function () {
+      var name = document.getElementById('oName').value.trim();
+      var place = document.getElementById('oPlace').value.trim();
+      var details = document.getElementById('oDetails').value.trim();
+      if (!name || !place) {
+        document.getElementById('oError').style.display = 'block';
+        return;
+      }
+      lsSet('abs_name', name); lsSet('abs_place', place); lsSet('abs_branch', oBranch.value);
+      var phone = BRANCHES[+oBranch.value].phone;
+      var url = 'https://wa.me/' + phone + '?text=' + encodeURIComponent(buildMessage(name, place, details));
+      logWeb('Customer ' + name + ' (' + place + ') sent a WhatsApp ' + (current.mode === 'price' ? 'price request' : 'order') + ' for ' + current.item + ' — ' + BRANCHES[+oBranch.value].name, 'b' + (+oBranch.value + 1));
+      window.open(url, '_blank');
+      orderModal.hide();
+    });
+
+    /* ---------- about: read more ---------- */
+    var aboutMore = document.getElementById('aboutMore'), aboutBtn = document.getElementById('aboutBtn');
+    if (aboutMore && aboutBtn) {
+      aboutMore.addEventListener('shown.bs.collapse', function () { aboutBtn.textContent = 'Show less'; });
+      aboutMore.addEventListener('hidden.bs.collapse', function () { aboutBtn.textContent = 'Read more'; });
+    }
+
+    /* ---------- products added in the staff portal appear here automatically ---------- */
+    var WEB_KEY = 'abs_demo_v3';
+    var WEB_GRIDS = {
+      printing: ['gridPrinting', 'col-6 col-md-3'], stationery: ['gridStationery', 'col-6 col-md-3'],
+      frames: ['gridFrames', 'col-6 col-md-4'], electronics: ['gridElectronics', 'col-6 col-md-4'],
+      branding: ['gridBranding', 'col-6 col-md-4']
+    };
+    function logWeb(text, branch) {
+      try {
+        var d = JSON.parse(localStorage.getItem(WEB_KEY)); if (!d || !d.log) return;
+        d.seq = (d.seq || 0) + 1;
+        d.log.unshift({ id: d.seq, t: new Date().toLocaleString('en-UG', { timeZone: 'Africa/Kampala' }), user: 'Website customer', u: '__web', role: 'system', branch: branch || '', text: text });
+        if (d.log.length > 500) d.log.length = 500;
+        localStorage.setItem(WEB_KEY, JSON.stringify(d));
+      } catch (x) {}
+    }
+    function renderWebProducts() {
+      document.querySelectorAll('.web-prod').forEach(function (n) { n.remove(); });
+      var data = null;
+      try { data = JSON.parse(localStorage.getItem(WEB_KEY)); } catch (x) {}
+      if (!data || !data.products) return;
+      data.products.forEach(function (p) {
+        if (!p.web) return;
+        var total = 0;
+        Object.keys(data.stock || {}).forEach(function (b) { total += (data.stock[b] && data.stock[b][p.id]) || 0; });
+        if (total < 1) return;
+        var g = WEB_GRIDS[p.cat]; if (!g) return;
+        var grid = document.getElementById(g[0]); if (!grid) return;
+        var used = p.cond === 'used';
+        var item = esc(p.name + (used ? ' (Used)' : ''));
+        var html = '<div class="' + g[1] + ' web-prod" data-cat="' + esc(p.cat) + '"><div class="product-card">' +
+          '<div class="pic-slot">' + (p.img ? '<img src="' + p.img + '" alt="' + esc(p.name) + ' — AB SIGNS MEDIA" />' : esc(p.name)) + '<button type="button" class="pc-plus" data-order data-mode="order" data-item="' + item + '" aria-label="Order">+</button></div>' +
+          '<div class="p-3 text-center">' +
+            '<span class="badge ' + (used ? 'bg-warning text-dark' : 'bg-success') + ' mb-1">' + (used ? 'Used' : 'New') + '</span>' +
+            '<div class="pc-name">' + esc(p.name) + '</div>' +
+            (p.desc ? '<div class="web-desc small text-muted mb-1">' + esc(p.desc) + '</div>' : '') +
+            '<div class="pc-qty">In stock: ' + total + '</div>' +
+            '<div class="pc-price">' + (p.price ? 'UGX ' + Number(p.price).toLocaleString('en-US') : 'Ask price') + '</div>' +
+            (p.old && p.price && p.old > p.price ? '<div class="pc-old"><s>UGX ' + Number(p.old).toLocaleString('en-US') + '</s> <span class="pc-off">-' + Math.round((1 - p.price / p.old) * 100) + '%</span></div>' : '') +
+            '<div class="d-grid gap-1">' +
+              '<button type="button" class="btn btn-outline-success btn-sm rounded-pill" data-order data-mode="price" data-item="' + item + '">Ask price</button>' +
+              '<button type="button" class="btn btn-wa btn-sm rounded-pill" data-order data-mode="order" data-item="' + item + '"><i class="fab fa-whatsapp"></i> Order</button>' +
+            '</div></div></div></div>';
+        grid.insertAdjacentHTML('afterbegin', html);
+      });
+      filterItems();
+    }
+    renderWebProducts();
+    window.addEventListener('storage', function (ev) { if (ev.key === WEB_KEY) renderWebProducts(); });
+
+    /* ---------- feedback ---------- */
+    function sendFeedback(type) {
+      var name = document.getElementById('cust-name').value.trim();
+      var staff = document.getElementById('served-by').value;
+      var rating = document.getElementById('rating').value;
+      var comments = document.getElementById('comments').value.trim();
+      if (!name || !staff || !rating || !comments) {
+        alert('Please fill all fields.');
+        return;
+      }
+      var now = new Date().toLocaleString('en-UG', { timeZone: 'Africa/Kampala' });
+      logWeb('Feedback from ' + name + ' — rating ' + rating + ', served by ' + staff);
+      var msg = '*AB SIGNS MEDIA - Feedback*\n\nName: ' + name + '\nServed by: ' + staff + '\nRating: ' + rating + '\nComment: ' + comments + '\nTime: ' + now;
+      if (type === 'wa') {
+        window.open('https://wa.me/256788002309?text=' + encodeURIComponent(msg), '_blank');
+      } else {
+        window.location.href = 'mailto:absignsmedia@gmail.com?subject=' + encodeURIComponent('AB SIGNS Media Feedback') + '&body=' + encodeURIComponent(msg);
+      }
+    }
+  </script>
+
+  <script>
+    /* ===== customer site <-> staff area ===== */
+    function showStaff() {
+      document.getElementById('siteView').hidden = true;
+      document.getElementById('staffView').hidden = false;
+      try { var v = document.getElementById('bannerVideo'); if (v) v.pause(); } catch (x) {}
+      window.scrollTo(0, 0);
+    }
+    function showSite() {
+      document.getElementById('staffView').hidden = true;
+      document.getElementById('siteView').hidden = false;
+      try { var v = document.getElementById('bannerVideo'); if (v && v.style.display !== 'none') v.play().catch(function () {}); } catch (x) {}
+      if (location.hash === '#login') history.replaceState(null, '', location.pathname + location.search);
+      window.scrollTo(0, 0);
+    }
+    (function () {
+      var panel = document.getElementById('menuPanel'), back = document.getElementById('menuBackdrop');
+      function openMenu() { panel.classList.add('open'); back.classList.add('open'); }
+      function closeMenu() { panel.classList.remove('open'); back.classList.remove('open'); }
+      document.getElementById('menuBtn').addEventListener('click', openMenu);
+      document.getElementById('menuClose').addEventListener('click', closeMenu);
+      back.addEventListener('click', closeMenu);
+      panel.addEventListener('click', function (ev) { if (ev.target.closest('a')) closeMenu(); });
+      document.addEventListener('keydown', function (ev) { if (ev.key === 'Escape') closeMenu(); });
+      document.addEventListener('click', function (ev) {
+        var a = ev.target.closest('a[href="#login"]'); if (!a) return;
+        ev.preventDefault(); closeMenu(); showStaff();
+      });
+      /* always open on the customer page */
+      if (location.hash === '#login') history.replaceState(null, '', location.pathname + location.search);
+    })();
+  </script>
+  <script>
+(function () {
+
+    /* ============ SAVED DATA (stored in this browser) ============ */
+    var KEY = 'abs_demo_v3', LOW = 5;   /* index.html reads the same key */
+    var COMPANY = 'AB SIGNS MEDIA SERVICES UGANDA', SLOGAN = 'Quality for Lifetime Memories';
+    var ROLE = { director: 'Director (CEO)', manager: 'Manager', attendant: 'Attendant', system: 'System' };
+    var CATS = { printing: 'Printing', stationery: 'Stationery', frames: 'Frames & Boards', electronics: 'Electronics', branding: 'Branding' };
+    function $(id) { return document.getElementById(id); }
+    function e(s) { return String(s == null ? '' : s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;'); }
+    function now() { return new Date().toLocaleString('en-UG', { timeZone: 'Africa/Kampala' }); }
+    function brandHTML() { return '<span class="ab">AB</span> SIGNS <span class="md">MEDIA</span> SERVICES UGANDA'; }
+    function money(n) { return 'UGX ' + Number(n).toLocaleString('en-US'); }
+    function condBadge(p) { return p.cond === 'used' ? '<span class="badge bg-warning text-dark">Used</span>' : '<span class="badge bg-success">New</span>'; }
+
+    function seed() {
+      var br = [
+        { id: 'b1', name: 'Bududa Main', phone: '0788 002 309' },
+        { id: 'b2', name: 'Konokoyi', phone: '0769 801 082' },
+        { id: 'b3', name: 'Lukhonje', phone: '0761 237 885' },
+        { id: 'b4', name: 'Kamu Market', phone: '0791 266 453' }
+      ];
+      var base = [['Banners & Posters', 'printing'], ['Business Cards', 'printing'], ['Stickers & Labels', 'printing'],
+        ['Photocopy Paper / Rim', 'stationery'], ['A4 Bond Paper', 'stationery'], ['Epson Ink', 'stationery'], ['Toner', 'stationery'],
+        ['Notebooks', 'stationery'], ['Markers', 'stationery'], ['Pens', 'stationery'], ['Sellotape & Packing Tape', 'stationery'],
+        ['Frames', 'frames'], ['Boards', 'frames'], ['Photo Boards', 'frames'],
+        ['USB Cables', 'electronics'], ['HDMI Cables', 'electronics'], ['Fridge Guards', 'electronics']];
+      /* web:false → these already exist on the website's own list, so they are not published twice */
+      var pr = base.map(function (n, i) { return { id: 'p' + (i + 1), name: n[0], cat: n[1], cond: 'new', desc: '', price: 0, img: '', web: false }; });
+      var st = {};
+      br.forEach(function (b, bi) {
+        st[b.id] = {};
+        pr.forEach(function (p, pi) { st[b.id][p.id] = (pi * 7 + bi * 11) % 30; });
+      });
+      var users = [{ u: 'director', pw: '1234', name: 'Wakoba Abraham', role: 'director', branch: '', status: 'active' }];
+      var short = { b1: 'bududa', b2: 'konokoyi', b3: 'lukhonje', b4: 'kamu' };
+      br.forEach(function (b) {
+        users.push({ u: 'manager.' + short[b.id], pw: '1234', name: 'Manager ' + b.name, role: 'manager', branch: b.id, status: 'active' });
+        users.push({ u: 'attendant.' + short[b.id], pw: '1234', name: 'Attendant ' + b.name, role: 'attendant', branch: b.id, status: 'active' });
+      });
+      users.push({ u: 'sarah', pw: '1234', name: 'Sarah Namono', role: 'attendant', branch: 'b2', status: 'pending' });
+      return { branches: br, products: pr, stock: st, users: users, log: [], seq: 0, seen: {} };
+    }
+    function load() {
+      try { var s = JSON.parse(localStorage.getItem(KEY)); if (s && s.branches) { s.seen = s.seen || {}; s.seq = s.seq || 0; return s; } } catch (x) {}
+      return seed();
+    }
+    function save() {
+      try { localStorage.setItem(KEY, JSON.stringify(S)); return true; }
+      catch (x) { toast('Storage is full — remove some product pictures.'); return false; }
+    }
+
+    var S = load(), me = null, tab = null, vb = null, mt = '', mp = '', ep = '';
+    var screen = 'login', newImg = '', photoFor = '', lastSlip = null;
+    try {
+      var su = sessionStorage.getItem('abs_user');
+      if (su) me = S.users.find(function (u) { return u.u === su && u.status !== 'pending'; }) || null;
+    } catch (x) {}
+
+    function beep() {
+      try {
+        var C = window.AudioContext || window.webkitAudioContext; beep.c = beep.c || new C(); var c = beep.c; if (c.state === 'suspended') c.resume();
+        [880, 1175].forEach(function (f, i) {
+          var o = c.createOscillator(), g = c.createGain(), t = c.currentTime + i * .2;
+          o.type = 'sine'; o.frequency.value = f; g.gain.setValueAtTime(.0001, t); g.gain.exponentialRampToValueAtTime(.3, t + .03); g.gain.exponentialRampToValueAtTime(.0001, t + .3);
+          o.connect(g); g.connect(c.destination); o.start(t); o.stop(t + .32);
+        });
+      } catch (x) {}
+    }
+    document.addEventListener('click', function () { try { var C = window.AudioContext || window.webkitAudioContext; beep.c = beep.c || new C(); beep.c.resume(); } catch (x) {} }, { once: true });
+    function isDir() { return me.role === 'director'; }
+    function isMgr() { return me.role === 'manager'; }
+    function canManage() { return isDir() || isMgr(); }
+    function curBranch() { return isDir() ? (vb && vb !== 'ALL' ? vb : S.branches[0].id) : me.branch; }
+    function bName(id) { var b = S.branches.find(function (x) { return x.id === id; }); return b ? b.name : '—'; }
+    function stockOf(b, p) { return (S.stock[b] && S.stock[b][p]) || 0; }
+    function prodOf(id) { return S.products.find(function (p) { return p.id === id; }); }
+    function addLog(branch, text, extra) {
+      var l = { id: ++S.seq, t: now(), user: me.name, u: me.u, role: me.role, branch: branch, text: text };
+      if (extra) for (var k in extra) l[k] = extra[k];
+      S.log.unshift(l);
+      if (S.log.length > 500) S.log.length = 500;
+      return l;
+    }
+    function addSys(branch, text) {
+      S.log.unshift({ id: ++S.seq, t: now(), user: 'System', u: '__system', role: 'system', branch: branch, text: text, kind: 'low' });
+    }
+    function toast(msg, ms) {
+      var t = $('toast'); t.textContent = msg; t.style.display = 'block';
+      clearTimeout(toast._t); toast._t = setTimeout(function () { t.style.display = 'none'; }, ms || 3200);
+    }
+    function canApprove(u) { return isDir() || (isMgr() && u.branch === me.branch && u.role === 'attendant'); }
+    function pendingList() { return S.users.filter(function (u) { return u.status === 'pending' && canApprove(u); }); }
+    function relevant(l) { return l.u !== me.u && (isDir() || (isMgr() && l.branch === me.branch)); }
+    function unreadCount() {
+      if (!canManage()) return 0;
+      var seen = S.seen[me.u] || 0;
+      return S.log.filter(function (l) { return l.id > seen && relevant(l); }).length;
+    }
+    function thumb(p, big) {
+      var c = 'pthumb' + (big ? ' big' : '');
+      return p.img ? '<img src="' + p.img + '" class="' + c + '" alt="' + e(p.name) + '" />'
+                   : '<div class="' + c + ' ph">' + e(p.name.charAt(0).toUpperCase()) + '</div>';
+    }
+    function catOptions(sel) {
+      return Object.keys(CATS).map(function (k) { return '<option value="' + k + '"' + (k === sel ? ' selected' : '') + '>' + CATS[k] + '</option>'; }).join('');
+    }
+
+    /* ============ LOGIN / SIGN-UP SCREENS ============ */
+    function authHTML() {
+      var head = '<div class="text-center mb-3"><div class="brand">' + brandHTML() + '</div><div class="slogan">' + SLOGAN + '</div>' +
+        '<div class="small text-muted mt-1">' + (screen === 'signup' ? 'Create your staff account' : 'Staff Login') + '</div></div>';
+      var foot = '<div class="text-center mt-3 small"><a href="#" data-act="web">&larr; Back to website</a></div>';
+
+      if (screen === 'done') {
+        return '<div class="card p-4 mx-auto mt-3" style="max-width:380px">' + head +
+          '<div class="alert alert-success small">Your account has been created. Please wait for your Manager or Director to <b>approve</b> it, then log in.</div>' +
+          '<button class="btn btn-primary w-100" data-act="gologin">Go to login</button>' + foot + '</div>';
+      }
+      if (screen === 'signup') {
+        return '<div class="card p-4 mx-auto mt-3" style="max-width:380px">' + head +
+          '<label class="form-label small fw-bold">Full name</label><input id="gName" class="form-control mb-2" autocomplete="name" />' +
+          '<label class="form-label small fw-bold">Username</label><input id="gUser" class="form-control mb-2" autocapitalize="none" autocomplete="username" placeholder="letters or numbers, no spaces" />' +
+          '<label class="form-label small fw-bold">Password</label><input id="gPass" type="password" class="form-control mb-2" autocomplete="new-password" />' +
+          '<label class="form-label small fw-bold">Which branch?</label><select id="gBranch" class="form-select mb-2">' +
+            S.branches.map(function (b) { return '<option value="' + b.id + '">' + e(b.name) + '</option>'; }).join('') + '</select>' +
+          '<label class="form-label small fw-bold">I am a...</label><select id="gRole" class="form-select mb-2"><option value="attendant">Attendant</option><option value="manager">Manager</option></select>' +
+          '<div id="gErr" class="text-danger small mb-2" style="display:none"></div>' +
+          '<button class="btn btn-primary w-100 mb-2" data-act="signup">Create account</button>' +
+          '<button class="btn btn-link w-100 btn-sm" data-act="gologin">Already have an account? Log in</button>' + foot + '</div>';
+      }
+      return '<div class="card p-4 mx-auto mt-3" style="max-width:380px">' + head +
+        '<label class="form-label small fw-bold">Username</label><input id="lUser" class="form-control mb-2" autocapitalize="none" autocomplete="username" />' +
+        '<label class="form-label small fw-bold">Password</label><input id="lPass" type="password" class="form-control mb-2" autocomplete="current-password" />' +
+        '<div id="lErr" class="text-danger small mb-2" style="display:none"></div>' +
+        '<button class="btn btn-primary w-100 mb-2" data-act="login">Log in</button>' +
+        '<button class="btn btn-outline-primary w-100 btn-sm" data-act="gosignup">New staff? Create an account</button>' + foot +
+        '</div>';
+    }
+
+    /* ============ MAIN SCREENS ============ */
+    function tabList() {
+      if (isDir()) return ['overview', 'approvals', 'stock', 'activity', 'products', 'staff', 'branches'];
+      if (isMgr()) return ['approvals', 'stock', 'activity', 'products', 'staff'];
+      return ['stock'];
+    }
+    var TAB_NAME = { overview: 'Overview', approvals: 'Approvals', stock: 'Stock', activity: 'Activity', products: 'Products', staff: 'Staff', branches: 'Branches' };
+
+    function render() {
+      $('staffView').classList.toggle('auth', !me);
+      if (!me) { $('app').innerHTML = authHTML(); return; }
+      var tabs = tabList();
+      if (!tab || tabs.indexOf(tab) < 0) tab = tabs[0];
+      if (isDir() && !vb) vb = S.branches[0].id;
+      if (isDir() && tab !== 'activity' && vb === 'ALL') vb = S.branches[0].id;
+      var pend = canManage() ? pendingList().length : 0;
+      var unread = unreadCount();
+      var viewing = tab === 'activity' && (!isDir() || vb === 'ALL');   /* alerts are only 'read' when they are actually on screen */
+      var h = '<div class="d-flex justify-content-between align-items-center flex-wrap gap-2 mb-3">' +
+        '<div><div class="brand">' + brandHTML() + '</div>' +
+        '<div class="small text-muted">' + e(me.name) + ' <span class="badge bg-primary">' + ROLE[me.role] + '</span> ' +
+        (me.branch ? '<span class="badge bg-secondary">' + e(bName(me.branch)) + '</span>' : '<span class="badge bg-secondary">All branches</span>') + '</div></div>' +
+        '<div class="d-flex gap-2">' +
+        (unread && !viewing ? '<button class="btn btn-sm btn-warning" data-act="tab" data-t="activity">&#128276; ' + unread + '</button>' : '') +
+        '<a class="btn btn-sm btn-outline-secondary" href="#" data-act="web">Website</a>' +
+        '<button class="btn btn-sm btn-outline-danger" data-act="logout">Log out</button></div></div>';
+      if (tabs.length > 1) {
+        h += '<ul class="nav nav-pills mb-3 flex-nowrap overflow-auto">' + tabs.map(function (t) {
+          var b = '';
+          if (t === 'approvals' && pend) b = ' <span class="badge bg-danger">' + pend + '</span>';
+          if (t === 'activity' && unread && !viewing) b = ' <span class="badge bg-danger">' + unread + '</span>';
+          return '<li class="nav-item"><button class="nav-link' + (t === tab ? ' active' : '') + '" data-act="tab" data-t="' + t + '">' + TAB_NAME[t] + b + '</button></li>';
+        }).join('') + '</ul>';
+      }
+      if (pend && tab !== 'approvals') {
+        h += '<div class="alert alert-warning py-2 d-flex justify-content-between align-items-center"><span><b>' + pend + '</b> new staff ' + (pend === 1 ? 'account is' : 'accounts are') + ' waiting for approval.</span>' +
+          '<button class="btn btn-sm btn-warning" data-act="tab" data-t="approvals">Review</button></div>';
+      }
+      h += content();
+      $('app').innerHTML = h;
+      if (tab === 'stock') stockList();
+      if (viewing && canManage() && S.log.length) { S.seen[me.u] = S.log[0].id; save(); }
+    }
+
+    function branchSelect(includeAll) {
+      if (!isDir()) return '';
+      return '<select id="bsel" class="form-select form-select-sm w-auto mb-2">' +
+        (includeAll ? '<option value="ALL"' + (vb === 'ALL' ? ' selected' : '') + '>All branches</option>' : '') +
+        S.branches.map(function (b) { return '<option value="' + b.id + '"' + (b.id === vb ? ' selected' : '') + '>' + e(b.name) + '</option>'; }).join('') + '</select>';
+    }
+    function slipBanner() {
+      if (!lastSlip) return '';
+      return '<div class="alert alert-success py-2 d-flex justify-content-between align-items-center flex-wrap gap-2"><span>' + e(lastSlip.msg) + '</span><span>' +
+        '<button class="btn btn-sm btn-success" data-act="slip" data-id="' + lastSlip.id + '">Print supply slip</button> ' +
+        '<button class="btn btn-sm btn-outline-secondary" data-act="dismiss">&times;</button></span></div>';
+    }
+
+    function content() {
+      if (tab === 'overview') return overviewHTML();
+      if (tab === 'approvals') return approvalsHTML();
+      if (tab === 'stock') return stockHTML();
+      if (tab === 'activity') return activityHTML();
+      if (tab === 'products') return productsHTML();
+      if (tab === 'staff') return staffHTML();
+      if (tab === 'branches') return branchesHTML();
+      return '';
+    }
+
+    /* ---- Overview (director) ---- */
+    function overviewHTML() {
+      return '<div class="row g-2">' + S.branches.map(function (b) {
+        var units = 0, low = 0, out = 0;
+        S.products.forEach(function (p) { var n = stockOf(b.id, p.id); units += n; if (n === 0) out++; else if (n <= LOW) low++; });
+        var act = S.users.filter(function (u) { return u.branch === b.id && u.status !== 'pending'; });
+        var mg = act.find(function (u) { return u.role === 'manager'; });
+        return '<div class="col-12 col-md-6"><div class="card p-3 h-100">' +
+          '<div class="d-flex justify-content-between"><h6 class="mb-0">' + e(b.name) + '</h6><span class="small text-muted">' + e(b.phone) + '</span></div>' +
+          '<div class="small text-muted mb-2">Manager: ' + (mg ? e(mg.name) : 'not assigned') + ' &middot; ' + act.length + ' staff</div>' +
+          '<div class="row text-center mb-2"><div class="col"><div class="stat">' + units + '</div><div class="small">units</div></div>' +
+          '<div class="col"><div class="stat text-warning">' + low + '</div><div class="small">low</div></div>' +
+          '<div class="col"><div class="stat text-danger">' + out + '</div><div class="small">out</div></div></div>' +
+          '<button class="btn btn-sm btn-outline-primary" data-act="open" data-b="' + b.id + '">Open stock</button></div></div>';
+      }).join('') + '</div>';
+    }
+
+    /* ---- Approvals ---- */
+    function approvalsHTML() {
+      var list = pendingList();
+      var note = '<div class="small text-muted mb-2">' + (isDir()
+        ? 'New staff create their own account. You can approve anyone, including managers.'
+        : 'New staff for ' + e(bName(me.branch)) + ' appear here. Only the Director can approve a new manager.') + '</div>';
+      if (!list.length) return note + '<div class="text-muted">Nobody is waiting for approval.</div>';
+      return note + list.map(function (u) {
+        return '<div class="item"><div class="d-flex justify-content-between align-items-start flex-wrap gap-2">' +
+          '<div><b>' + e(u.name) + '</b><div class="small text-muted">@' + e(u.u) + '</div>' +
+          '<div class="mt-1"><span class="badge bg-primary">' + ROLE[u.role] + '</span> <span class="badge bg-secondary">' + e(bName(u.branch)) + '</span></div></div>' +
+          '<div class="btn-group btn-group-sm"><button class="btn btn-success" data-act="approve" data-u="' + e(u.u) + '">Approve</button>' +
+          '<button class="btn btn-outline-danger" data-act="reject" data-u="' + e(u.u) + '">Reject</button></div></div></div>';
+      }).join('');
+    }
+
+    /* ---- Stock ---- */
+    function stockHTML() {
+      var b = curBranch();
+      return slipBanner() + '<div class="d-flex flex-wrap gap-2 align-items-start">' + branchSelect(false) + '</div>' +
+        '<div class="small text-muted mb-2">Stock at <b>' + e(bName(b)) + '</b></div>' +
+        '<input id="q" class="form-control mb-2" placeholder="Search product..." /><div id="stockList"></div>';
+    }
+    function stockList() {
+      var b = curBranch(), q = ($('q') ? $('q').value : '').toLowerCase();
+      var list = S.products.filter(function (p) { return p.name.toLowerCase().indexOf(q) > -1; });
+      $('stockList').innerHTML = list.length ? list.map(function (p) {
+        var n = stockOf(b, p.id);
+        var badge = n === 0 ? '<span class="badge bg-danger">Out of stock</span>' :
+          n <= LOW ? '<span class="badge bg-warning text-dark">Low: ' + n + '</span>' : '<span class="badge bg-success">' + n + ' in stock</span>';
+        return '<div class="item d-flex justify-content-between align-items-center flex-wrap gap-2">' +
+          '<div class="d-flex align-items-center gap-2">' + thumb(p) + '<div><div class="fw-bold">' + e(p.name) + (p.cond === 'used' ? ' <span class="badge bg-warning text-dark">Used</span>' : '') + '</div>' + badge + '</div></div>' +
+          '<div class="btn-group btn-group-sm">' +
+          '<button class="btn btn-success" data-act="stk" data-m="add" data-p="' + p.id + '">+ Add</button>' +
+          '<button class="btn btn-outline-danger" data-act="stk" data-m="sold" data-p="' + p.id + '">Sold</button>' +
+          (canManage() ? '<button class="btn btn-outline-secondary" data-act="stk" data-m="count" data-p="' + p.id + '">Count</button>' : '') +
+          '</div></div>';
+      }).join('') : '<div class="text-muted">No product found.</div>';
+    }
+
+    /* ---- Activity (with alerts) ---- */
+    function activityHTML() {
+      var seen = S.seen[me.u] || 0;
+      var rows = S.log.filter(function (l) {
+        if (isDir()) return vb === 'ALL' || l.branch === vb;
+        return l.branch === me.branch;
+      }).slice(0, 100);
+      var allow = (canManage() && window.Notification && Notification.permission === 'default')
+        ? '<button class="btn btn-sm btn-outline-primary mb-2 ms-2" data-act="allownotif">&#128276; Allow pop-up alerts</button>' : '';
+      return '<div class="d-flex flex-wrap align-items-start">' + branchSelect(true) + allow + '</div>' +
+        (rows.length ? rows.map(function (l) {
+          var isNew = canManage() && l.id > seen && relevant(l);
+          var slip = (l.kind === 'add' || l.kind === 'product') ? ' <button class="btn btn-sm btn-outline-secondary py-0" data-act="slip" data-id="' + l.id + '">Print slip</button>' : '';
+          var low = l.kind === 'low' ? ' <span class="badge bg-danger">LOW STOCK</span>' : '';
+          return '<div class="item' + (isNew ? ' unread' : '') + '"><div class="small text-muted">' + e(l.t) + ' &middot; ' + e(bName(l.branch)) + (isNew ? ' <span class="badge bg-warning text-dark">NEW</span>' : '') + '</div>' +
+            '<div><b>' + e(l.user) + '</b> ' + (l.role !== 'system' ? '<span class="badge bg-light text-dark border">' + ROLE[l.role] + '</span>' : '') + low + '</div>' +
+            '<div>' + e(l.text) + slip + '</div></div>';
+        }).join('') : '<div class="text-muted">No activity yet. Add or sell some stock and it will appear here.</div>');
+    }
+
+    /* ---- Products ---- */
+    function productsHTML() {
+      var prev = newImg ? '<img id="newPrev" src="' + newImg + '" class="pthumb big" alt="" />' : '<div id="newPrev" class="pthumb big ph">+</div>';
+      var branchField = isDir()
+        ? '<select id="pBranch" class="form-select mb-2">' + S.branches.map(function (b) { return '<option value="' + b.id + '"' + (b.id === curBranch() ? ' selected' : '') + '>' + e(b.name) + '</option>'; }).join('') + '</select>'
+        : '<div class="form-control mb-2 bg-light">' + e(bName(me.branch)) + '</div>';
+      return slipBanner() + '<div class="card p-3 mb-3"><h6>Add a product</h6>' +
+        '<div class="d-flex gap-3 align-items-center mb-2">' + prev +
+        '<div class="d-grid gap-1 flex-fill">' +
+        '<button class="btn btn-outline-primary btn-sm" data-act="pick" data-p="new" data-src="cam">&#128247; Take photo</button>' +
+        '<button class="btn btn-outline-primary btn-sm" data-act="pick" data-p="new" data-src="file">&#128444; Upload picture</button></div></div>' +
+        '<label class="form-label small fw-bold">Product name</label><input id="pName" class="form-control mb-2" placeholder="e.g. HP Laptop 15" />' +
+        '<div class="row g-2"><div class="col-6"><label class="form-label small fw-bold">Category</label><select id="pCat" class="form-select mb-2">' + catOptions('stationery') + '</select></div>' +
+        '<div class="col-6"><label class="form-label small fw-bold">Condition</label><select id="pCond" class="form-select mb-2"><option value="new">New</option><option value="used">Used</option></select></div></div>' +
+        '<div class="row g-2"><div class="col-6"><label class="form-label small fw-bold">Quantity</label><input id="pQty" type="number" min="0" inputmode="numeric" class="form-control mb-2" /></div>' +
+        '<div class="col-6"><label class="form-label small fw-bold">Price UGX (optional)</label><input id="pPrice" type="number" min="0" inputmode="numeric" class="form-control mb-2" /></div></div>' +
+        '<label class="form-label small fw-bold">Old price UGX (optional — shows a discount)</label><input id="pOld" type="number" min="0" inputmode="numeric" class="form-control mb-2" />' +
+        '<label class="form-label small fw-bold">Quantity goes to branch</label>' + branchField +
+        '<label class="form-label small fw-bold">Description</label><textarea id="pDesc" rows="2" class="form-control mb-2" placeholder="e.g. Brand new, 1 year warranty, color black"></textarea>' +
+        '<label class="form-label small fw-bold">Supplier (optional)</label><input id="pSupplier" class="form-control mb-2" placeholder="Who supplied it?" />' +
+        '<div class="form-check mb-2"><input class="form-check-input" type="checkbox" id="pWeb" checked /><label class="form-check-label small" for="pWeb">Show on the customer website</label></div>' +
+        '<div id="pErr" class="text-danger small mb-2" style="display:none"></div>' +
+        '<button class="btn btn-primary w-100" data-act="addprod">Add product</button></div>' +
+        S.products.map(function (p) {
+          var total = 0; S.branches.forEach(function (b) { total += stockOf(b.id, p.id); });
+          return '<div class="item"><div class="d-flex justify-content-between align-items-center flex-wrap gap-2">' +
+            '<div class="d-flex align-items-center gap-2">' + thumb(p) + '<div><div class="fw-bold">' + e(p.name) + '</div>' +
+            '<div>' + condBadge(p) + ' <span class="badge bg-light text-dark border">' + e(CATS[p.cat] || '') + '</span>' +
+            (p.web ? ' <span class="badge bg-info text-dark">On website</span>' : '') +
+            ' <span class="small text-muted">' + (p.price ? money(p.price) : 'Ask price') + ' &middot; ' + total + ' in stock</span></div>' +
+            (p.desc ? '<div class="desc">' + e(p.desc) + '</div>' : '') + '</div></div>' +
+            '<div class="btn-group btn-group-sm">' +
+            '<button class="btn btn-outline-secondary" data-act="pick" data-p="' + p.id + '" data-src="cam" title="Take photo">&#128247;</button>' +
+            '<button class="btn btn-outline-secondary" data-act="pick" data-p="' + p.id + '" data-src="file" title="Upload picture">&#128444;</button>' +
+            '<button class="btn btn-outline-primary" data-act="editprod" data-p="' + p.id + '">Edit</button>' +
+            (isDir() ? '<button class="btn btn-outline-danger" data-act="delprod" data-p="' + p.id + '">Remove</button>' : '') +
+            '</div></div></div>';
+        }).join('');
+    }
+
+    /* ---- Staff (active accounts) ---- */
+    function staffHTML() {
+      var list = S.users.filter(function (u) { return u.status !== 'pending' && (isDir() || u.branch === me.branch); });
+      return '<div class="small text-muted mb-2">Staff create their own accounts. Approve them in the <b>Approvals</b> tab.</div>' +
+        list.map(function (u) {
+          var canDel = u.role !== 'director' && u.u !== me.u && (isDir() || u.role === 'attendant');
+          return '<div class="item d-flex justify-content-between align-items-center"><div><b>' + e(u.name) + '</b><div class="small text-muted">@' + e(u.u) + ' &middot; ' + ROLE[u.role] + (u.branch ? ' &middot; ' + e(bName(u.branch)) : '') + '</div></div>' +
+            (canDel ? '<button class="btn btn-sm btn-outline-danger" data-act="delstaff" data-u="' + e(u.u) + '">Remove</button>' : '') + '</div>';
+        }).join('');
+    }
+
+    /* ---- Branches (director) ---- */
+    function branchesHTML() {
+      return '<div class="card p-3 mb-3"><h6>Add a branch</h6>' +
+        '<input id="brName" class="form-control mb-2" placeholder="Branch name" />' +
+        '<input id="brPhone" class="form-control mb-2" placeholder="Phone number" />' +
+        '<div id="brErr" class="text-danger small mb-2" style="display:none"></div>' +
+        '<button class="btn btn-primary" data-act="addbranch">Add branch</button>' +
+        '<div class="small text-muted mt-2">A new branch starts with zero stock. Staff can then pick it when they create their account.</div></div>' +
+        S.branches.map(function (b) {
+          var mg = S.users.find(function (u) { return u.branch === b.id && u.role === 'manager' && u.status !== 'pending'; });
+          return '<div class="item"><b>' + e(b.name) + '</b><div class="small text-muted">' + e(b.phone) + ' &middot; Manager: ' + (mg ? e(mg.name) : 'not assigned') + '</div></div>';
+        }).join('');
+    }
+
+    /* ============ ACTIONS ============ */
+    function showErr(id, msg) { var x = $(id); x.textContent = msg; x.style.display = 'block'; }
+    function login(u, p) {
+      var user = S.users.find(function (x) { return x.u === String(u).trim().toLowerCase() && x.pw === p; });
+      if (!user) { showErr('lErr', 'Wrong username or password.'); return; }
+      if (user.status === 'pending') { showErr('lErr', 'Your account is still waiting for approval.'); return; }
+      me = user; vb = null; tab = null; lastSlip = null;
+      try { sessionStorage.setItem('abs_user', user.u); } catch (x) {}
+      render();
+    }
+    function signup() {
+      var name = $('gName').value.trim(), un = $('gUser').value.trim().toLowerCase(), pw = $('gPass').value;
+      var br = $('gBranch').value, role = $('gRole').value;
+      if (!name || !un || !pw) return showErr('gErr', 'Fill in your name, username and password.');
+      if (!/^[a-z0-9._-]{3,}$/.test(un)) return showErr('gErr', 'Username: at least 3 letters or numbers, no spaces.');
+      if (pw.length < 4) return showErr('gErr', 'Password must be at least 4 characters.');
+      if (S.users.some(function (u) { return u.u === un; })) return showErr('gErr', 'That username is taken. Try another.');
+      S.users.push({ u: un, pw: pw, name: name, role: role, branch: br, status: 'pending' });
+      S.log.unshift({ id: ++S.seq, t: now(), user: name, u: un, role: role, branch: br, text: 'Created an account and is waiting for approval' });
+      save(); screen = 'done'; render();
+    }
+
+    /* ---- stock modal ---- */
+    var stockModal = new bootstrap.Modal($('stockModal'));
+    function openStock(m, p) {
+      mt = m; mp = p;
+      var prod = prodOf(p), b = curBranch();
+      var titles = { add: 'Add stock', sold: 'Record sale', count: 'Stock count' };
+      $('mTitle').textContent = titles[m] + ': ' + prod.name;
+      $('mInfo').textContent = bName(b) + ' · now in stock: ' + stockOf(b, p);
+      $('mQtyLabel').textContent = m === 'count' ? 'Actual quantity counted' : (m === 'add' ? 'Quantity received' : 'Quantity sold');
+      $('mSupWrap').style.display = m === 'add' ? '' : 'none';
+      $('mQty').value = ''; $('mNote').value = ''; $('mSupplier').value = ''; $('mErr').style.display = 'none';
+      stockModal.show();
+      setTimeout(function () { $('mQty').focus(); }, 300);
+    }
+    function saveStock() {
+      var q = parseInt($('mQty').value, 10), note = $('mNote').value.trim(), sup = $('mSupplier').value.trim();
+      var b = curBranch(), prod = prodOf(mp), cur = stockOf(b, mp), nu, txt;
+      if (isNaN(q) || q < 0 || (mt !== 'count' && q < 1)) { showErr('mErr', 'Enter a valid quantity.'); return; }
+      if (mt === 'add') { nu = cur + q; txt = 'Added ' + q + ' × ' + prod.name + ' (' + cur + ' → ' + nu + ')'; }
+      else if (mt === 'sold') {
+        if (q > cur) { showErr('mErr', 'Only ' + cur + ' in stock.'); return; }
+        nu = cur - q; txt = 'Sold ' + q + ' × ' + prod.name + ' (' + cur + ' → ' + nu + ')';
+      } else { nu = q; txt = 'Counted ' + prod.name + ': ' + cur + ' → ' + nu; }
+      if (mt === 'add' && sup) txt += ' — supplier: ' + sup;
+      if (note) txt += ' — ' + note;
+      S.stock[b][mp] = nu;
+      var l = addLog(b, txt, { kind: mt, pid: mp, pname: prod.name, qty: q, supplier: sup, note: note });
+      if (mt !== 'add' && ((nu === 0 && cur > 0) || (cur > LOW && nu <= LOW))) {
+        addSys(b, prod.name + ' at ' + bName(b) + ': ' + (nu === 0 ? 'finished' : 'only ' + nu + ' left'));
+      }
+      lastSlip = mt === 'add' ? { id: l.id, msg: 'Stock added: ' + q + ' × ' + prod.name } : null;
+      save(); stockModal.hide(); render(); toast('Saved');
+    }
+
+    /* ---- add / edit product ---- */
+    function addProduct() {
+      var n = $('pName').value.trim(), q = parseInt($('pQty').value, 10);
+      if (!n) return showErr('pErr', 'Enter the product name.');
+      if (isNaN(q) || q < 0) return showErr('pErr', 'Enter the quantity.');
+      if (S.products.some(function (p) { return p.name.toLowerCase() === n.toLowerCase(); })) return showErr('pErr', 'That product already exists. Use + Add on the Stock tab to add more.');
+      var br = isDir() ? $('pBranch').value : me.branch;
+      var price = parseInt($('pPrice').value, 10); if (isNaN(price) || price < 0) price = 0;
+      var sup = $('pSupplier').value.trim(), web = $('pWeb').checked, cond = $('pCond').value;
+      var id = 'n' + Date.now();
+      S.products.push({ id: id, name: n, cat: $('pCat').value, cond: cond, desc: $('pDesc').value.trim(), price: price, old: parseInt($('pOld').value, 10) || 0, img: newImg, web: web });
+      S.branches.forEach(function (b) { S.stock[b.id][id] = 0; });
+      S.stock[br][id] = q;
+      var l = addLog(br, 'Added new product: ' + n + ' (' + (cond === 'used' ? 'Used' : 'New') + ') — quantity ' + q + (sup ? ' — supplier: ' + sup : ''),
+        { kind: 'product', pid: id, pname: n, qty: q, supplier: sup });
+      lastSlip = { id: l.id, msg: web ? 'Product added. It is now showing on the customer website.' : 'Product added (not shown on the website).' };
+      newImg = '';
+      if (save()) { render(); toast('Product added'); }
+    }
+    var pModal = new bootstrap.Modal($('pModal'));
+    function openEdit(id) {
+      var p = prodOf(id); ep = id;
+      $('epName').value = p.name; $('epCat').innerHTML = catOptions(p.cat); $('epCond').value = p.cond || 'new';
+      $('epPrice').value = p.price || ''; $('epOld').value = p.old || ''; $('epDesc').value = p.desc || ''; $('epWeb').checked = !!p.web; $('epErr').style.display = 'none';
+      pModal.show();
+    }
+    function saveEdit() {
+      var p = prodOf(ep), n = $('epName').value.trim();
+      if (!n) return showErr('epErr', 'Enter the product name.');
+      if (S.products.some(function (x) { return x.id !== ep && x.name.toLowerCase() === n.toLowerCase(); })) return showErr('epErr', 'Another product has that name.');
+      var price = parseInt($('epPrice').value, 10); if (isNaN(price) || price < 0) price = 0;
+      p.name = n; p.cat = $('epCat').value; p.cond = $('epCond').value; p.price = price; p.old = parseInt($('epOld').value, 10) || 0; p.desc = $('epDesc').value.trim(); p.web = $('epWeb').checked;
+      addLog(isDir() ? curBranch() : me.branch, 'Edited product: ' + n, { kind: 'edit', pid: ep, pname: n });
+      pModal.hide(); if (save()) { render(); toast('Product updated'); }
+    }
+
+    /* ---- pictures: take or upload, shrink, store ---- */
+    function shrink(file, cb) {
+      var rd = new FileReader();
+      rd.onload = function () {
+        var im = new Image();
+        im.onload = function () {
+          var max = 480, w = im.width, h = im.height, k = Math.min(1, max / Math.max(w, h));
+          var c = document.createElement('canvas'); c.width = Math.round(w * k); c.height = Math.round(h * k);
+          c.getContext('2d').drawImage(im, 0, 0, c.width, c.height);
+          cb(c.toDataURL('image/jpeg', 0.75));
+        };
+        im.onerror = function () { toast('Could not read that picture.'); };
+        im.src = rd.result;
+      };
+      rd.readAsDataURL(file);
+    }
+    function onPicked(ev) {
+      var f = ev.target.files && ev.target.files[0]; ev.target.value = '';
+      if (!f) return;
+      shrink(f, function (data) {
+        if (photoFor === 'new') {
+          newImg = data;
+          var holder = $('newPrev');
+          if (holder) { var im = document.createElement('img'); im.id = 'newPrev'; im.className = 'pthumb big'; im.src = data; holder.replaceWith(im); }
+        } else {
+          var pr = prodOf(photoFor);
+          if (!pr) return;
+          pr.img = data;
+          addLog(isDir() ? curBranch() : me.branch, 'Changed the picture of ' + pr.name, { kind: 'edit', pid: pr.id, pname: pr.name });
+          if (save()) { render(); toast('Picture saved'); }
+        }
+      });
+    }
+    $('fCam').addEventListener('change', onPicked);
+    $('fFile').addEventListener('change', onPicked);
+
+    /* ---- printable supply slip ---- */
+    function printSlip(id) {
+      var l = S.log.find(function (x) { return x.id === id; });
+      if (!l) return;
+      var p = prodOf(l.pid), cond = p ? (p.cond === 'used' ? 'Used' : 'New') : '—';
+      var no = 'SS-' + String(l.id).padStart(5, '0');
+      var html = '<!doctype html><html><head><meta charset="utf-8"><title>' + no + '</title><style>' +
+        'body{font-family:Arial,sans-serif;color:#111;padding:24px;max-width:620px;margin:0 auto}' +
+        'h1{font-size:20px;margin:0}h2{font-size:15px;letter-spacing:2px;margin:14px 0 6px;border-top:2px solid #111;border-bottom:2px solid #111;padding:6px 0;text-align:center}' +
+        '.s{font-size:12px;color:#555;font-style:italic}table{width:100%;border-collapse:collapse;margin-top:10px}' +
+        'td,th{border:1px solid #888;padding:8px;text-align:left;font-size:14px}th{background:#eee}' +
+        '.meta td{border:none;padding:3px 0;font-size:13px}.sig{margin-top:46px;display:flex;gap:24px}.sig div{flex:1;border-top:1px solid #111;padding-top:4px;font-size:12px}' +
+        '</style></head><body>' +
+        '<h1>' + e(COMPANY) + '</h1><div class="s">' + e(SLOGAN) + '</div><h2>SUPPLY SLIP</h2>' +
+        '<table class="meta"><tr><td><b>Slip no:</b> ' + no + '</td><td><b>Date:</b> ' + e(l.t) + '</td></tr>' +
+        '<tr><td><b>Branch:</b> ' + e(bName(l.branch)) + '</td><td><b>Supplier:</b> ' + e(l.supplier || '—') + '</td></tr></table>' +
+        '<table><tr><th>Item</th><th>Condition</th><th>Quantity</th></tr><tr><td>' + e(l.pname) + '</td><td>' + cond + '</td><td>' + e(l.qty) + '</td></tr></table>' +
+        (l.note ? '<p style="font-size:13px"><b>Note:</b> ' + e(l.note) + '</p>' : '') +
+        '<p style="font-size:13px"><b>Received by:</b> ' + e(l.user) + ' (' + ROLE[l.role] + ')</p>' +
+        '<div class="sig"><div>Delivered by (supplier)</div><div>Received by</div><div>Approved by</div></div></body></html>';
+      var f = document.createElement('iframe');
+      f.style.cssText = 'position:fixed;right:0;bottom:0;width:0;height:0;border:0';
+      document.body.appendChild(f);
+      var d = f.contentWindow.document; d.open(); d.write(html); d.close();
+      setTimeout(function () { try { f.contentWindow.focus(); f.contentWindow.print(); } catch (x) { toast('Printing is not available here.'); } }, 400);
+      setTimeout(function () { f.remove(); }, 90000);
+    }
+
+    /* ---- clicks ---- */
+    document.addEventListener('click', function (ev) {
+      var t = ev.target.closest('[data-act]'); if (!t) return;
+      ev.preventDefault();
+      var a = t.getAttribute('data-act');
+      if (a === 'web') { showSite(); return; }
+      if (a === 'login') login($('lUser').value, $('lPass').value);
+      else if (a === 'gosignup') { screen = 'signup'; render(); }
+      else if (a === 'gologin') { screen = 'login'; render(); }
+      else if (a === 'signup') signup();
+      else if (a === 'reset') { try { localStorage.removeItem(KEY); sessionStorage.removeItem('abs_user'); } catch (x) {} S = seed(); me = null; screen = 'login'; newImg = ''; lastSlip = null; render(); toast('Demo data reset'); }
+      else if (a === 'logout') { try { sessionStorage.removeItem('abs_user'); } catch (x) {} me = null; tab = null; vb = null; screen = 'login'; lastSlip = null; render(); }
+      else if (a === 'tab') { tab = t.getAttribute('data-t'); lastSlip = null; if (tab === 'activity' && isDir()) vb = 'ALL'; render(); }
+      else if (a === 'open') { vb = t.getAttribute('data-b'); tab = 'stock'; render(); }
+      else if (a === 'stk') openStock(t.getAttribute('data-m'), t.getAttribute('data-p'));
+      else if (a === 'save') saveStock();
+      else if (a === 'dismiss') { lastSlip = null; render(); }
+      else if (a === 'slip') printSlip(parseInt(t.getAttribute('data-id'), 10));
+      else if (a === 'allownotif') { try { Notification.requestPermission().then(function () { render(); }); } catch (x) {} }
+      else if (a === 'approve') {
+        var au = S.users.find(function (u) { return u.u === t.getAttribute('data-u'); });
+        if (!au || !canApprove(au)) return;
+        au.status = 'active';
+        addLog(au.branch, 'Approved ' + ROLE[au.role] + ' account: ' + au.name); save(); render(); toast(au.name + ' approved');
+      }
+      else if (a === 'reject') {
+        var ru = S.users.find(function (u) { return u.u === t.getAttribute('data-u'); });
+        if (!ru || !canApprove(ru)) return;
+        if (!confirm('Reject ' + ru.name + '? Their account will be deleted.')) return;
+        S.users = S.users.filter(function (u) { return u !== ru; });
+        addLog(ru.branch, 'Rejected account request: ' + ru.name); save(); render();
+      }
+      else if (a === 'pick') { photoFor = t.getAttribute('data-p'); $(t.getAttribute('data-src') === 'cam' ? 'fCam' : 'fFile').click(); }
+      else if (a === 'addprod') addProduct();
+      else if (a === 'editprod') openEdit(t.getAttribute('data-p'));
+      else if (a === 'saveprod') saveEdit();
+      else if (a === 'delprod') {
+        var pid = t.getAttribute('data-p'), pr = prodOf(pid);
+        if (!confirm('Remove "' + pr.name + '" from all branches and from the website?')) return;
+        S.products = S.products.filter(function (p) { return p.id !== pid; });
+        addLog(curBranch(), 'Removed product: ' + pr.name); save(); render();
+      }
+      else if (a === 'delstaff') {
+        var uu = t.getAttribute('data-u'), us = S.users.find(function (u) { return u.u === uu; });
+        if (!confirm('Remove ' + us.name + '?')) return;
+        S.users = S.users.filter(function (u) { return u.u !== uu; });
+        addLog(us.branch || curBranch(), 'Removed account: ' + us.name); save(); render();
+      }
+      else if (a === 'addbranch') {
+        var bn = $('brName').value.trim(), ph = $('brPhone').value.trim();
+        if (!bn) return showErr('brErr', 'Enter the branch name.');
+        var bid = 'b' + Date.now(); S.branches.push({ id: bid, name: bn, phone: ph || '—' });
+        S.stock[bid] = {}; S.products.forEach(function (p) { S.stock[bid][p.id] = 0; });
+        addLog(bid, 'Added new branch: ' + bn); save(); render(); toast('Branch added');
+      }
+    });
+    document.addEventListener('change', function (ev) {
+      if (ev.target.id === 'bsel') { vb = ev.target.value; render(); }
+    });
+    document.addEventListener('input', function (ev) { if (ev.target.id === 'q') stockList(); });
+    document.addEventListener('keydown', function (ev) {
+      if (ev.key === 'Enter' && (ev.target.id === 'lPass' || ev.target.id === 'lUser')) login($('lUser').value, $('lPass').value);
+      if (ev.key === 'Enter' && ev.target.id === 'mQty') saveStock();
+    });
+
+    /* ---- live alerts: when another tab/phone using the same data changes something ---- */
+    window.addEventListener('storage', function (ev) {
+      if (ev.key !== KEY || !ev.newValue) return;
+      var oldTop = S.log.length ? S.log[0].id : 0;
+      try { S = JSON.parse(ev.newValue); S.seen = S.seen || {}; } catch (x) { return; }
+      if (me) {
+        me = S.users.find(function (u) { return u.u === me.u && u.status !== 'pending'; }) || null;
+        if (me && canManage()) {
+          var fresh = S.log.filter(function (l) { return l.id > oldTop && relevant(l); });
+          if (fresh.length) {
+            var l = fresh[0], msg = l.user + ': ' + l.text;
+            toast('🔔 ' + msg, 7000); beep();
+            try { if (window.Notification && Notification.permission === 'granted') new Notification(COMPANY, { body: msg }); } catch (x) {}
+          }
+        }
+      }
+      render();
+    });
+
+    render();
+  
+})();
+  </script>
+</body>
+</html>
